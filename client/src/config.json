@@ -1,0 +1,18 @@
+{
+    "ropsten": {
+        "API": "",
+        "HOST_ADDRESS": "",
+        "PolyToken_Address": "",
+        "Compliance_Address": "",
+        "Customers_Address": "",
+        "SecurityTokenRegistrar_Address": ""
+    },
+    "mainnet": {
+        "API": "",
+        "HOST_ADDRESS": "",
+        "PolyToken_Address": "",
+        "Compliance_Address": "",
+        "Customers_Address": "",
+        "SecurityTokenRegistrar_Address": ""
+    }
+}
