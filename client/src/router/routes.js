@@ -1,6 +1,6 @@
 import App from '../App';
-import Home from '../app/Home/index';
-import Education from '../app/Education/EducationPage';
+import Home from '../app/home/index';
+import Education from '../app/education/index';
 
 
 const routes = [
@@ -9,7 +9,7 @@ const routes = [
     routes: [
       {
         path: '/',
-        component: HomePage, // Landing Page
+        component: Home, // Landing Page
         exact: true,
       },
       {
