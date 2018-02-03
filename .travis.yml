@@ -1,5 +1,5 @@
 install:
-  - npm install
+  - yarn install
 
 env:
   - CI="true"
@@ -14,4 +14,4 @@ cache:
     - "node_modules"
 
 script:
-  - npm test
+  - yarn test
