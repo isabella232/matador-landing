@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import SelectField from 'material-ui/SelectField';
+import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem';
 import { RadioButton } from 'material-ui/RadioButton';
 import Dialog from 'material-ui/Dialog';
@@ -11,6 +11,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import renderRadioGroup from '../components/forms/radioGroup';
 import renderCheckbox from '../components/forms/checkBox';
 import renderTextField from '../components/forms/textBox';
+import renderSelectField from '../components/forms/selectField';
 
 const validate = (values) => {
   const errors = {};
@@ -35,10 +36,13 @@ const validate = (values) => {
 
 
 class CompanyInfoForm extends Component {
+
+  static propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+  };
+
   render() {
-    const {
-      handleSubmit, pristine, reset, submitting,
-    } = this.props;
+    const { handleSubmit } = this.props;
 
     const actions = [
       <FlatButton
@@ -68,20 +72,24 @@ class CompanyInfoForm extends Component {
               label="Legal Business Name"
             />
           </div>
+          <br />
           <div>
-            <Field name="Legal Entity Type" component={renderRadioGroup}>
-              <RadioButton value="Corportation" label="male" />
-              <RadioButton value="Partnership" label="female" />
-            </Field>
-          </div>          <div>
+	          <Field
+		          name="type"
+		          component={renderSelectField}
+		          label="Legal Entity Type"
+	          >
+		          <MenuItem value="Corporation" primaryText="Corporation" />
+		          <MenuItem value="Partnership" primaryText="Partnership" />
+	          </Field>
+          </div>
+          <br />
+          <div>
             <Field
               name="email"
               component={renderTextField}
-              label="email"
+              label="Primary Email"
             />
-          </div>
-          <div>
-            <Field name="employed" component={renderCheckbox} label="Employed" />
           </div>
         </form>
       </Dialog>
