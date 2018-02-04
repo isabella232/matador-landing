@@ -1,12 +1,13 @@
 @import "../../stylesheets/shadows";
 
-$container-size: 200px;
-$img-size: 120px;
+$container-size: 250px;
+$img-size: 170px;
 
 .tile-container {
     height: $container-size;
     width: $container-size;
-    opacity: 0.5;
+    color: black;
+    opacity: 0.4;
 }
 
 .tile-img img {
@@ -16,4 +17,10 @@ $img-size: 120px;
 
 .focused {
     opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .tile-container {
+        margin-top: 20px;
+    }
 }
