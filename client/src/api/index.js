@@ -12,3 +12,11 @@ export function getCompanyInfo(company) {
 export function postCompanyInfo(company) {
   // matadorAPI.get();
 }
+
+export function getUserChecklist(user) {
+  // matadorAPI.get();
+}
+
+export function postUserChecklist(user) {
+  // matadorAPI.get();
+}
