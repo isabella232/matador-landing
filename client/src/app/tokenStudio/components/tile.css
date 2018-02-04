@@ -26,6 +26,6 @@
 .focused {
   opacity: 1; }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .tile-container {
     margin-top: 20px; } }
