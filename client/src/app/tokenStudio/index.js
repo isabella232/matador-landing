@@ -6,20 +6,16 @@ import Button from '../components/button/button';
 import './style.css';
 
 class TokenStudio extends Component {
-
-    handleSubmit = (e, form, key, value) => {
-        debugger;
-        e.preventDefault();
-        console.log(form)
-        console.log(key)
-        console.log(value);
+    state = {
+        companyOpen: false,
     }
+
   render() {
     return (
       <div className="mt-5 main-container d-flex flex-column align-items-center">
         <h1>Design Your Token</h1>
         <div className="main-tile-container mt-5 d-flex flex-row justify-content-around align-self-center flex-wrap">
-          <div type="button" className="btn" data-toggle="modal" data-target="#personal">
+          <div onClick={() => this.setState({ companyOpen: true })}>
             <Tile
               focused={false}
               completed
@@ -50,7 +46,10 @@ class TokenStudio extends Component {
           <h6>Back</h6>
         </div>
 
-        <CompanyInfo onChange={(key, value) => this.handleUpdate.bidn(this, 'companyInfo', key, value)} />
+        <CompanyInfo
+            open={this.state.companyOpen}
+            close={() => this.setState({ companyOpen: false })}
+        />
       </div>
     );
   }
