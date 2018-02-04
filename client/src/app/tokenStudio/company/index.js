@@ -6,8 +6,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import renderTextField from '../components/forms/textBox';
-import renderSelectField from '../components/forms/selectField';
+import renderTextField from '../../components/forms/textBox';
+import renderSelectField from '../../components/forms/selectField';
 
 const validate = (values) => {
   const errors = {};
@@ -30,6 +30,10 @@ const validate = (values) => {
   return errors;
 };
 
+const customContentStyle = {
+	width: 'auto',
+	maxWidth: '30%',
+};
 
 class CompanyInfoForm extends Component {
 
@@ -55,9 +59,10 @@ class CompanyInfoForm extends Component {
     return (
         <div>
           <Dialog
-            title="Dialog With Actions"
+            title="Company Details"
             actions={actions}
             modal
+            contentStyle={customContentStyle}
             open={this.props.open}
           >
             <form onSubmit={() => this.props.submit()}>

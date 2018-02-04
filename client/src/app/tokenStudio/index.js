@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import RaisedButton from 'material-ui/RaisedButton';
 
-import CompanyInfo from '../company/index';
+import CompanyInfo from './company/index';
+import ST20 from './st20/index';
+import { createCompany, createST20, createSTO } from "../../api/tokenStudio";
 import Tile from './components/tile';
-import Button from '../components/button/button';
 import './style.css';
 
 class TokenStudio extends Component {
@@ -28,7 +30,7 @@ class TokenStudio extends Component {
 							completed={companyComplete}
 							link="/"
 							img="./img/user.png"
-							title="Personal"
+							title="Company Details"
 						/>
 					</div>
 					<div onClick={() => this.setState({ st20Open: true })}>
@@ -51,7 +53,7 @@ class TokenStudio extends Component {
 					</div>
 				</div>
 				<div className="mt-5 z-depth-1">
-					<Button title="Create Token" />
+					<RaisedButton label="Create Token" primary />
 				</div>
 				<div className="mt-5">
 					<h6>Back</h6>
@@ -62,6 +64,11 @@ class TokenStudio extends Component {
 					close={() => this.setState({ companyOpen: false })}
 					onSubmit={() => this.setState({ companyComplete: true, companyOpen: false })}
 				/>
+                <ST20
+					open={st20Open}
+					close={() => this.setState({ st20Open: false })}
+					onSubmit={() => this.setState({ st20Complete: true, st20Open: false })}
+				/>
 			</div>
 		);
 	}
@@ -71,5 +78,5 @@ const mapStateToProps = ({ form }) => {
 	return form;
 };
 
-export default connect(mapStateToProps, null)(TokenStudio);
+export default connect(mapStateToProps, { createCompany, createST20, createSTO })(TokenStudio);
 
