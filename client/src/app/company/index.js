@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem';
-import { RadioButton } from 'material-ui/RadioButton';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import renderRadioGroup from '../components/forms/radioGroup';
-import renderCheckbox from '../components/forms/checkBox';
 import renderTextField from '../components/forms/textBox';
 import renderSelectField from '../components/forms/selectField';
 
@@ -42,7 +38,6 @@ class CompanyInfoForm extends Component {
   };
 
   render() {
-    const { handleSubmit } = this.props;
 
     const actions = [
       <FlatButton
@@ -50,49 +45,51 @@ class CompanyInfoForm extends Component {
         primary
         onClick={() => this.props.close()}
       />,
-      <FlatButton
+      <RaisedButton
         label="Submit"
         primary
-        onClick={this.handleClose}
+        onClick={() => this.props.onSubmit()}
       />,
     ];
 
     return (
-      <Dialog
-        title="Dialog With Actions"
-        actions={actions}
-        modal
-        open={this.props.open}
-      >
-        <form onSubmit={handleSubmit}>
-          <div>
-            <Field
-              name="legalName"
-              component={renderTextField}
-              label="Legal Business Name"
-            />
-          </div>
-          <br />
-          <div>
-	          <Field
-		          name="type"
-		          component={renderSelectField}
-		          label="Legal Entity Type"
-	          >
-		          <MenuItem value="Corporation" primaryText="Corporation" />
-		          <MenuItem value="Partnership" primaryText="Partnership" />
-	          </Field>
-          </div>
-          <br />
-          <div>
-            <Field
-              name="email"
-              component={renderTextField}
-              label="Primary Email"
-            />
-          </div>
-        </form>
-      </Dialog>
+        <div>
+          <Dialog
+            title="Dialog With Actions"
+            actions={actions}
+            modal
+            open={this.props.open}
+          >
+            <form onSubmit={() => this.props.submit()}>
+              <div>
+                <Field
+                  name="legalName"
+                  component={renderTextField}
+                  label="Legal Business Name"
+                />
+              </div>
+              <br />
+              <div>
+                  <Field
+                      name="type"
+                      component={renderSelectField}
+                      label="Legal Entity Type"
+                  >
+                      <MenuItem value="Corporation" primaryText="Corporation" />
+                      <MenuItem value="Partnership" primaryText="Partnership" />
+                  </Field>
+              </div>
+              <br />
+              <div>
+                <Field
+                  name="email"
+                  component={renderTextField}
+                  label="Primary Email"
+                />
+              </div>
+            </form>
+          </Dialog>
+        </div>
     );
   }
 }
