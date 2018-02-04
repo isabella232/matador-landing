@@ -10,7 +10,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Matafuckingdor</h1>
-        {renderRoutes(route.routes)}
+        <div>
+          {renderRoutes(route.routes)}
+        </div>
       </div>
     );
   }
