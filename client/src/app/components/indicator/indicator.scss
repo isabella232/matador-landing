@@ -1,0 +1,14 @@
+$size: 30px;
+
+.indicator-container {
+    border: 1px solid black;
+    height: $size;
+    width: $size;
+    border-radius: $size / 2;
+    opacity: 0.5
+}
+
+.active {
+    background-color: lightgreen;
+    border: none;
+}

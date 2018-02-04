@@ -8,7 +8,7 @@ class App extends Component {
     const { route } = this.props;
 
     return (
-      <div>
+      <div className="App">
         <h1>Matafuckingdor</h1>
         {renderRoutes(route.routes)}
       </div>
