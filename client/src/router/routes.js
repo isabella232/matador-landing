@@ -1,7 +1,7 @@
 import App from '../App';
 import Home from '../app/home/index';
 import Education from '../app/education/index';
-
+import TokenStudio from '../app/tokenStudio/index';
 
 const routes = [
   {
@@ -15,6 +15,11 @@ const routes = [
       {
         path: '/education',
         component: Education, // Education Page
+        exact: true,
+      },
+      {
+        path: '/tokenStudio',
+        component: TokenStudio,
         exact: true,
       },
     ],

@@ -1,0 +1,19 @@
+@import "../../stylesheets/shadows";
+
+$container-size: 200px;
+$img-size: 120px;
+
+.tile-container {
+    height: $container-size;
+    width: $container-size;
+    opacity: 0.5;
+}
+
+.tile-img img {
+    width: $img-size;
+    height: $img-size;
+}
+
+.focused {
+    opacity: 1;
+}
