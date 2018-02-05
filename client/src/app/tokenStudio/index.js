@@ -24,8 +24,11 @@ class TokenStudio extends Component {
 		return (
 			<div className="mt-5 main-container d-flex flex-column align-items-center">
 				<h1>Design Your Token</h1>
-				<div className="main-tile-container mt-5 d-flex flex-row justify-content-around align-self-center flex-wrap">
-					<div onClick={() => this.props.toggleCompanyForm(true)}>
+				<div className="main-tile-container mt-5 row">
+					<div
+						className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
+						onClick={() => this.props.toggleCompanyForm(true)}
+					>
 						<Tile
 							focused={!companyComplete && !st20Complete && !stoComplete}
 							completed={companyComplete}
@@ -34,7 +37,10 @@ class TokenStudio extends Component {
 							title="Company Details"
 						/>
 					</div>
-					<div onClick={() => this.props.toggleSt20Form(true)}>
+					<div
+						className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
+						onClick={() => this.props.toggleSt20Form(true)}
+					>
 						<Tile
 							focused={companyComplete && !st20Complete && !stoComplete}
 							completed={st20Complete}
@@ -43,7 +49,10 @@ class TokenStudio extends Component {
 							title="ST-20"
 						/>
 					</div>
-					<div onClick={() => this.props.toggleStoForm(true)}>
+					<div
+						className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
+						onClick={() => this.props.toggleStoForm(true)}
+					>
 						<Tile
 							focused={companyComplete && st20Complete && !stoComplete}
 							completed={stoComplete}
