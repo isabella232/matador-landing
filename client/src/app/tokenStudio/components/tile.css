@@ -17,7 +17,8 @@
   height: 250px;
   width: 250px;
   color: black;
-  opacity: 0.4; }
+  opacity: 0.4;
+  border-radius: 2%; }
 
 .tile-img img {
   width: 170px;

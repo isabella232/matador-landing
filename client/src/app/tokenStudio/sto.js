@@ -69,30 +69,54 @@ class StoForm extends Component {
 					<form onSubmit={() => this.props.submit()}>
 						<div>
 							<Field
-								name="ticker"
-								component={renderTextField}
-								label="Ticker Name"
-							/>
-						</div>
-						<br />
-						<div>
-							<Field
-								name="supply"
-								component={renderTextField}
-								label="Total Supply"
-							/>
-						</div>
-						<br />
-						<div>
-							<Field
-								name="jurisdiction"
+								name="type"
 								component={renderSelectField}
-								label="Jurisdiction"
+								label="Type Offering"
 							>
-							<MenuItem value="Corporation" primaryText="Corporation" />
-							<MenuItem value="Partnership" primaryText="Partnership" />
-						</Field>
+								<MenuItem value="value1" primaryText="Value1" />
+								<MenuItem value="value2" primaryText="Value2" />
+							</Field>
 						</div>
+						<div>
+							<Field
+								name="cap"
+								component={renderTextField}
+								label="Cap"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="startDate"
+								component={renderTextField}
+								label="Start Date"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="endDate"
+								component={renderTextField}
+								label="End Date"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="quorum"
+								component={renderTextField}
+								label="Quorum"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="lockup"
+								component={renderTextField}
+								label="Lockup Period"
+							/>
+						</div>
+						<br />
 					</form>
 				</Dialog>
 			</div>
