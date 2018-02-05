@@ -1,14 +1,47 @@
-import React from 'react';
 import axios from 'axios';
+import * as TS from '../constants/redux/tokenStudio';
 
-export const createCompany = (values) => {
-
+export const toggleCompanyForm = value => function (dispatch) {
+  dispatch({ type: TS.TOGGLE_COMPANY_FORM, payload: value });
 };
 
-export const createST20 = () => {
-
+export const toggleSt20Form = value => function (dispatch) {
+  dispatch({ type: TS.TOGGLE_ST20_FORM, payload: value });
 };
 
-export const createSTO = () => {
+export const toggleStoForm = value => function (dispatch) {
+  dispatch({ type: TS.TOGGLE_STO_FORM, payload: value });
+};
 
+export const createCompany = values => function (dispatch) {
+  // axios.post(values)
+  //   .then((res) => {
+  //     dispatch({ type: TS.CREATE_COMPANY, payload: res });
+  //   })
+  //   .catch((err) => {
+  //     dispatch({ type: TS.CREATE_COMPANY_FAILED, payload: err });
+  //   });
+  dispatch({ type: TS.CREATE_COMPANY });
+};
+
+export const createST20 = values => function (dispatch) {
+  // axios.post(values)
+  //   .then((res) => {
+  //     dispatch({ type: TS.CREATE_ST20_FAILED });
+  //   })
+  //   .catch((err) => {
+  //     dispatch({ type: TS.CREATE_ST20_FAILED, payload: err });
+  //   });
+  dispatch({ type: TS.CREATE_ST20 });
+};
+
+export const createSTO = values => function (dispatch) {
+  // axios.post(values)
+  //   .then((res) => {
+  //     dispatch({ type: TS.CREATE_STO, payload: res });
+  //   })
+  //   .catch((err) => {
+  //     dispatch({ type: TS.CREATE_STO_FAILED, payload: err });
+  //   });
+  dispatch({ type: TS.CREATE_STO });
 };

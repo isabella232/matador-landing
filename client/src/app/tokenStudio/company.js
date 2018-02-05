@@ -6,8 +6,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import renderTextField from '../../components/forms/textBox';
-import renderSelectField from '../../components/forms/selectField';
+import renderTextField from '../components/forms/textBox';
+import renderSelectField from '../components/forms/selectField';
 
 const validate = (values) => {
   const errors = {};

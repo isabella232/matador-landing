@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eca64c2d-0641-4e75-8e31-fa0b39c9f67f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/company/style.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/st20/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/constants/redux/tokenStudio.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/company/index.js" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/company/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/company/style.css" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/company/style.css" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/company/style.scss" afterPath="$PROJECT_DIR$/client/src/api/tokenStudio.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/components/button/button.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/components/button/button.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/components/button/button.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" afterPath="$PROJECT_DIR$/client/.eslintrc.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/tokenStudio.js" afterPath="$PROJECT_DIR$/client/src/api/tokenStudio.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/tokenStudio/company/index.js" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/company.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/tokenStudio/company/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/tokenStudio/company/style.scss" afterPath="$PROJECT_DIR$/client/src/redux/reducers/tokenStudio.js" />
       <change beforePath="$PROJECT_DIR$/client/src/app/tokenStudio/index.js" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/index.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/tokenStudio/st20/index.js" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/st20.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/constants/redux.js" afterPath="$PROJECT_DIR$/client/src/app/tokenStudio/sto.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/reducer.js" afterPath="$PROJECT_DIR$/client/src/redux/reducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +32,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="63" lean-forward="false" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -41,29 +41,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tokenStudio.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/api/tokenStudio.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/st20/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-239">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/client/src/redux/reducers</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,14 +61,21 @@
         <option value="$PROJECT_DIR$/client/src/app/education/EducationPage.js" />
         <option value="$PROJECT_DIR$/client/src/app/home/index.js" />
         <option value="$PROJECT_DIR$/client/src/router/routes.js" />
-        <option value="$PROJECT_DIR$/client/src/redux/reducer.js" />
         <option value="$PROJECT_DIR$/client/src/redux/reducers/user.js" />
         <option value="$PROJECT_DIR$/client/src/app/components/forms/selectField.js" />
         <option value="$PROJECT_DIR$/client/src/app/company/index.js" />
         <option value="$PROJECT_DIR$/client/src/app/tokenStudio/company/index.js" />
         <option value="$PROJECT_DIR$/client/src/app/tokenStudio/st20/st20.js" />
-        <option value="$PROJECT_DIR$/client/src/api/tokenStudio.js" />
         <option value="$PROJECT_DIR$/client/src/app/tokenStudio/st20/index.js" />
+        <option value="$PROJECT_DIR$/client/src/constants/redux.js" />
+        <option value="$PROJECT_DIR$/client/src/app/tokenStudio/st20.js" />
+        <option value="$PROJECT_DIR$/client/src/app/tokenStudio/company.js" />
+        <option value="$PROJECT_DIR$/client/.eslintrc.js" />
+        <option value="$PROJECT_DIR$/client/src/redux/reducer.js" />
+        <option value="$PROJECT_DIR$/client/src/app/tokenStudio/sto.js" />
+        <option value="$PROJECT_DIR$/client/src/constants/redux/tokenStudio.js" />
+        <option value="$PROJECT_DIR$/client/src/api/tokenStudio.js" />
+        <option value="$PROJECT_DIR$/client/src/redux/reducers/tokenStudio.js" />
         <option value="$PROJECT_DIR$/client/src/app/tokenStudio/index.js" />
       </list>
     </option>
@@ -158,14 +151,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="matador-wizard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="matador-wizard" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="tokenStudio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -173,18 +158,15 @@
               <item name="matador-wizard" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="tokenStudio" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="matador-wizard" type="b2602c69:ProjectViewProjectNode" />
               <item name="matador-wizard" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="tokenStudio" type="462c0819:PsiDirectoryNode" />
-              <item name="st20" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="matador-wizard" type="b2602c69:ProjectViewProjectNode" />
@@ -198,7 +180,8 @@
               <item name="matador-wizard" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,7 +192,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -223,8 +206,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/app/tokenStudio/st20" />
+      <recent name="$PROJECT_DIR$/client/src/constants/redux" />
       <recent name="$PROJECT_DIR$/client/src/app/tokenStudio" />
+      <recent name="$PROJECT_DIR$/client/src/app/tokenStudio/st20" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,12 +237,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517682527106</updated>
       <workItem from="1517682528480" duration="2345000" />
-      <workItem from="1517768451025" duration="5489000" />
+      <workItem from="1517768451025" duration="9191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7834000" />
+    <option name="totallyTimeSpent" value="11536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
@@ -321,7 +305,8 @@
         <state relative-caret-position="105">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <marker date="1517759732648" expanded="true" signature="200:210" ph="{&quot;UserReducer&quot;: UserReducer...}" />
+            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1517796168183" expanded="true" signature="265:275" ph="{&quot;UserReducer&quot;: UserReducer...}" />
           </folding>
         </state>
       </provider>
@@ -396,14 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -437,17 +414,7 @@
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/redux/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1517759732648" expanded="true" signature="200:210" ph="{&quot;UserReducer&quot;: UserReducer...}" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -468,38 +435,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/company/index.js">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
           <caret line="61" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/sto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="102" column="18" lean-forward="false" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/st20.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-798">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1517796168183" expanded="true" signature="265:275" ph="{&quot;UserReducer&quot;: UserReducer...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/constants/redux/tokenStudio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="55" lean-forward="true" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/api/tokenStudio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="327">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/st20/index.js">
+    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/tokenStudio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/tokenStudio/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="63" lean-forward="false" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

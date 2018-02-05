@@ -6,8 +6,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import renderTextField from '../../components/forms/textBox';
-import renderSelectField from '../../components/forms/selectField';
+import renderTextField from '../components/forms/textBox';
+import renderSelectField from '../components/forms/selectField';
 
 const validate = (values) => {
 	const errors = {};
@@ -35,7 +35,7 @@ const customContentStyle = {
 	maxWidth: '30%',
 };
 
-class ST20Form extends Component {
+class StoForm extends Component {
 
 	static propTypes = {
 		handleSubmit: PropTypes.func.isRequired,
@@ -99,9 +99,9 @@ class ST20Form extends Component {
 	}
 }
 
-ST20Form = reduxForm({
-	form: 'st20Form',
+StoForm = reduxForm({
+	form: 'stoForm',
 	validate,
-})(ST20Form);
+})(StoForm);
 
-export default ST20Form;
+export default StoForm;
