@@ -30,9 +30,10 @@ const validate = (values) => {
   return errors;
 };
 
+const width = window.innerWidth <= 900 ? '80%' : '30%';
 const customContentStyle = {
 	width: 'auto',
-	maxWidth: '30%',
+	maxWidth: width,
 };
 
 class CompanyInfoForm extends Component {

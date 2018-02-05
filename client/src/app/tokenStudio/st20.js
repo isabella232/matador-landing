@@ -30,9 +30,10 @@ const validate = (values) => {
 	return errors;
 };
 
+const width = window.innerWidth <= 900 ? '80%' : '30%';
 const customContentStyle = {
 	width: 'auto',
-	maxWidth: '30%',
+	maxWidth: width,
 };
 
 class ST20Form extends Component {
@@ -68,29 +69,37 @@ class ST20Form extends Component {
 					<form onSubmit={() => this.props.submit()}>
 						<div>
 							<Field
-								name="legalName"
+								name="ticker"
 								component={renderTextField}
-								label="Legal Business Name"
+								label="Ticker Name"
 							/>
 						</div>
 						<br />
 						<div>
 							<Field
-								name="type"
+								name="supply"
+								component={renderTextField}
+								label="Total Supply"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="owner"
+								component={renderTextField}
+								label="Owner Address"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="jurisdiction"
 								component={renderSelectField}
-								label="Legal Entity Type"
+								label="Jurisdiction"
 							>
 								<MenuItem value="Corporation" primaryText="Corporation" />
 								<MenuItem value="Partnership" primaryText="Partnership" />
 							</Field>
-						</div>
-						<br />
-						<div>
-							<Field
-								name="email"
-								component={renderTextField}
-								label="Primary Email"
-							/>
 						</div>
 					</form>
 				</Dialog>

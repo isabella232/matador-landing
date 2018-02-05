@@ -20,7 +20,7 @@ const validate = (values) => {
 		if (!values[field]) {
 			errors[field] = 'Required';
 		}
-	}); 
+	});
 	if (
 		values.email &&
 		!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
@@ -30,9 +30,10 @@ const validate = (values) => {
 	return errors;
 };
 
+const width = window.innerWidth <= 900 ? '80%' : '30%';
 const customContentStyle = {
 	width: 'auto',
-	maxWidth: '60%',
+	maxWidth: width,
 };
 
 class StoForm extends Component {
@@ -68,29 +69,29 @@ class StoForm extends Component {
 					<form onSubmit={() => this.props.submit()}>
 						<div>
 							<Field
-								name="legalName"
+								name="ticker"
 								component={renderTextField}
-								label="Legal Business Name"
+								label="Ticker Name"
 							/>
 						</div>
 						<br />
 						<div>
 							<Field
-								name="type"
+								name="supply"
+								component={renderTextField}
+								label="Total Supply"
+							/>
+						</div>
+						<br />
+						<div>
+							<Field
+								name="jurisdiction"
 								component={renderSelectField}
-								label="Legal Entity Type"
+								label="Jurisdiction"
 							>
-								<MenuItem value="Corporation" primaryText="Corporation" />
-								<MenuItem value="Partnership" primaryText="Partnership" />
-							</Field>
-						</div>
-						<br />
-						<div>
-							<Field
-								name="email"
-								component={renderTextField}
-								label="Primary Email"
-							/>
+							<MenuItem value="Corporation" primaryText="Corporation" />
+							<MenuItem value="Partnership" primaryText="Partnership" />
+						</Field>
 						</div>
 					</form>
 				</Dialog>
