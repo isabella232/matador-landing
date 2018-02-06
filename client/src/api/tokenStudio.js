@@ -2,7 +2,6 @@ import axios from 'axios';
 import * as TS from '../constants/redux/tokenStudio';
 
 export const toggleForm = value => (dispatch) => {
-  console.log(value);
   dispatch({ type: TS.TOGGLE_FORM, payload: value });
 };
 
