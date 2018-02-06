@@ -11,6 +11,10 @@
 .greyed-out-list {
   opacity: 30%; }
 
+.checkedOff {
+  color: black;
+  background-color: black; }
+
 ul.checkmark li {
   font-size: 16px;
   margin-bottom: 1em;

@@ -10,6 +10,7 @@ module.exports = {
   },
 
   "rules": {
+    "no-tab": "off",
     "no-console": "off",
     "no-continue": "off",
     "no-nested-ternary": "off",
