@@ -44,7 +44,7 @@ class TokenStudio extends Component {
           </div>
           <div
             className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
-            onClick={() => this.props.toggleSt20Form(true)}
+            onClick={() => companyComplete ? this.props.toggleSt20Form(true) : null}
           >
             <Tile
               focused={companyComplete && !st20Complete && !stoComplete}
@@ -55,7 +55,7 @@ class TokenStudio extends Component {
           </div>
           <div
             className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
-            onClick={() => this.props.toggleStoForm(true)}
+            onClick={() => stoComplete ? this.props.toggleStoForm(true) : null}
           >
             <Tile
               focused={companyComplete && st20Complete && !stoComplete}
