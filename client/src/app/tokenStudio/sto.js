@@ -60,7 +60,7 @@ class StoForm extends Component {
 		return (
 			<div>
 				<Dialog
-					title="Company Details"
+					title="STO Details"
 					actions={actions}
 					modal
 					contentStyle={customContentStyle}

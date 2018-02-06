@@ -60,7 +60,7 @@ class ST20Form extends Component {
 		return (
 			<div>
 				<Dialog
-					title="Company Details"
+					title="ST-20 Details"
 					actions={actions}
 					modal
 					contentStyle={customContentStyle}
