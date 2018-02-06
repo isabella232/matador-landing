@@ -9,7 +9,7 @@ import GavelIcon from 'material-ui/svg-icons/action/gavel';
 import CompanyInfo from './company';
 import St20Form from './st20';
 import StoForm from './sto';
-import { createCompany, createST20, createSTO, toggleCompanyForm, toggleSt20Form, toggleStoForm } from '../../api/tokenStudio';
+import { createCompany, createST20, createSTO, toggleForm } from '../../api/tokenStudio';
 import Tile from './components/tile';
 import './style.css';
 
@@ -25,7 +25,7 @@ class TokenStudio extends Component {
 
   render() {
     const {
-      companyOpen, st20Open, stoOpen, companyComplete, st20Complete, stoComplete,
+      openState, companyComplete, st20Complete, stoComplete,
     } = this.props.TokenStudio;
     return (
       <div className="mt-5 main-container d-flex flex-column align-items-center">
@@ -33,7 +33,7 @@ class TokenStudio extends Component {
         <div className="main-tile-container mt-5 row">
           <div
             className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
-            onClick={() => this.props.toggleCompanyForm(true)}
+            onClick={() => this.props.toggleForm({ ...openState, company: true })}
           >
             <Tile
               focused={!companyComplete && !st20Complete && !stoComplete}
@@ -44,7 +44,7 @@ class TokenStudio extends Component {
           </div>
           <div
             className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
-            onClick={() => this.props.toggleSt20Form(true)}
+            onClick={() => companyComplete ? this.props.toggleForm({ ...openState, st20: true }) : null}
           >
             <Tile
               focused={companyComplete && !st20Complete && !stoComplete}
@@ -55,7 +55,7 @@ class TokenStudio extends Component {
           </div>
           <div
             className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
-            onClick={() => this.props.toggleStoForm(true)}
+            onClick={() => st20Complete ? this.props.toggleForm({ ...openState, sto: true }) : null}
           >
             <Tile
               focused={companyComplete && st20Complete && !stoComplete}
@@ -77,18 +77,18 @@ class TokenStudio extends Component {
         </div>
 
         <CompanyInfo
-          open={companyOpen}
-          close={() => this.props.toggleCompanyForm(false)}
+          open={openState.company}
+          close={() => this.props.toggleForm({ ...openState, company: false })}
           onSubmit={() => this.props.createCompany(this.props.companyInfoForm)}
         />
         <St20Form
-          open={st20Open}
-          close={() => this.props.toggleSt20Form(false)}
+          open={openState.st20}
+					close={() => this.props.toggleForm({ ...openState, st20: false })}
           onSubmit={() => this.props.createST20(this.props.st20Form)}
         />
         <StoForm
-          open={stoOpen}
-          close={() => this.props.toggleStoForm(false)}
+          open={openState.sto}
+					close={() => this.props.toggleForm({ ...openState, sto: false })}
           onSubmit={() => this.props.createSTO(this.props.stoForm)}
         />
       </div>
@@ -99,6 +99,5 @@ class TokenStudio extends Component {
 const mapStateToProps = ({ form, TokenStudio }) => ({ TokenStudio, form });
 
 export default connect(mapStateToProps, {
-  createCompany, createST20, createSTO, toggleCompanyForm, toggleSt20Form, toggleStoForm,
+  createCompany, createST20, createSTO, toggleForm,
 })(TokenStudio);
-

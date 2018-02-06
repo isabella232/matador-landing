@@ -38,10 +38,6 @@ const customContentStyle = {
 
 class CompanyInfoForm extends Component {
 
-  static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-  };
-
   render() {
 
     const actions = [
@@ -64,7 +60,7 @@ class CompanyInfoForm extends Component {
             actions={actions}
             modal
             contentStyle={customContentStyle}
-            open={this.props.open}
+            open={this.props.open || false}
           >
             <form onSubmit={() => this.props.submit()}>
               <div>
@@ -99,6 +95,10 @@ class CompanyInfoForm extends Component {
     );
   }
 }
+
+CompanyInfoForm.propTypes: {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 CompanyInfoForm = reduxForm({
   form: 'companyInfoForm',
