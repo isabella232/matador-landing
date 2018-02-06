@@ -9,12 +9,16 @@ $img-size: 170px;
     color: black;
     opacity: 0.4;
     border-radius: 2%;
-
 }
 
-.tile-img img {
-    width: $img-size;
-    height: $img-size;
+.tile-container:hover {
+    @extend %z-depth-4;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
+}
+
+.tile-img svg {
+    font-size: 7em;
 }
 
 .focused {
