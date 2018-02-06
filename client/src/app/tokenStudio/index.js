@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
+import GroupIcon from 'material-ui/svg-icons/social/group';
+import AssignmentIcon from 'material-ui/svg-icons/action/assignment';
+import GavelIcon from 'material-ui/svg-icons/action/gavel';
 
 import CompanyInfo from './company';
 import St20Form from './st20';
@@ -9,6 +12,8 @@ import StoForm from './sto';
 import { createCompany, createST20, createSTO, toggleCompanyForm, toggleSt20Form, toggleStoForm } from '../../api/tokenStudio';
 import Tile from './components/tile';
 import './style.css';
+
+const IconStyle = { width: '1em', height: '1em' };
 
 class TokenStudio extends Component {
 
@@ -33,8 +38,7 @@ class TokenStudio extends Component {
             <Tile
               focused={!companyComplete && !st20Complete && !stoComplete}
               completed={companyComplete}
-              link="/"
-              img="./img/user.png"
+              icon={<GroupIcon style={IconStyle} />}
               title="Company Details"
             />
           </div>
@@ -45,8 +49,7 @@ class TokenStudio extends Component {
             <Tile
               focused={companyComplete && !st20Complete && !stoComplete}
               completed={st20Complete}
-              link="/"
-              img="./img/user.png"
+              icon={<AssignmentIcon style={IconStyle} />}
               title="ST-20"
             />
           </div>
@@ -57,8 +60,7 @@ class TokenStudio extends Component {
             <Tile
               focused={companyComplete && st20Complete && !stoComplete}
               completed={stoComplete}
-              link="/"
-              img="./img/user.png"
+              icon={<GavelIcon style={IconStyle} />}
               title="STO"
             />
           </div>
