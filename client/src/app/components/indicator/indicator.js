@@ -7,11 +7,15 @@ import './indicator.css';
 const IconStyle = { width: '24px', height: '24px' };
 
 const Indicator = props => (
-  <div className={props.active ? ['indicator-container active'] : 'indicator-container'}>
-    <CheckIcon
-      style={IconStyle}
-      color="#43A047"
-    />
+  <div>
+    { props.active ?
+      <CheckIcon
+        style={IconStyle}
+        color="#43A047"
+      />
+      :
+      null
+    }
   </div>
 );
 

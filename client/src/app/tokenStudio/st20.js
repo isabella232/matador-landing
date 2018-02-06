@@ -9,6 +9,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import renderTextField from '../components/forms/textBox';
 import renderSelectField from '../components/forms/selectField';
 
+const countries = require('country-list')();
+
 const validate = (values) => {
   const errors = {};
   const requiredFields = [
@@ -51,7 +53,26 @@ class ST20Form extends Component {
       />,
     ];
 
-    return (
+  componentWillMount = () => {
+    const countryList = countries.getNameList()
+    this.setState({ countryList })
+  }
+
+  render() {
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary
+        onClick={() => this.props.close()}
+      />,
+      <RaisedButton
+        label="Submit"
+        primary
+        onClick={() => this.props.onSubmit()}
+      />,
+    ];
+
+	return (
       <div>
         <Dialog
           title="ST-20 Details"
@@ -91,7 +112,11 @@ class ST20Form extends Component {
                 component={renderSelectField}
                 label="Jurisdiction"
               >
-                <MenuItem value="Corporation" primaryText="Corporation" />
+                {/* {
+                  this.state.countryList.map(c => {
+                    <MenuItem value={c} primaryText={Object.keys(c)} />
+                  })
+                } */}
                 <MenuItem value="Partnership" primaryText="Partnership" />
               </Field>
             </div>
