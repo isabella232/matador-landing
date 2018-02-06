@@ -1,16 +1,9 @@
 import axios from 'axios';
 import * as TS from '../constants/redux/tokenStudio';
 
-export const toggleCompanyForm = value => function (dispatch) {
-  dispatch({ type: TS.TOGGLE_COMPANY_FORM, payload: value });
-};
-
-export const toggleSt20Form = value => function (dispatch) {
-  dispatch({ type: TS.TOGGLE_ST20_FORM, payload: value });
-};
-
-export const toggleStoForm = value => function (dispatch) {
-  dispatch({ type: TS.TOGGLE_STO_FORM, payload: value });
+export const toggleForm = value => (dispatch) => {
+  console.log(value);
+  dispatch({ type: TS.TOGGLE_FORM, payload: value });
 };
 
 export const createCompany = values => function (dispatch) {
