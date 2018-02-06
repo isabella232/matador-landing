@@ -32,7 +32,7 @@ class TokenStudio extends Component {
         <h1>Design Your Token</h1>
         <div className="main-tile-container mt-5 row">
           <div
-            className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
+            className="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center"
             onClick={() => this.props.toggleForm({ ...openState, company: true })}
           >
             <Tile
@@ -43,7 +43,7 @@ class TokenStudio extends Component {
             />
           </div>
           <div
-            className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
+            className="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center"
             onClick={() => companyComplete ? this.props.toggleForm({ ...openState, st20: true }) : null}
           >
             <Tile
@@ -54,7 +54,7 @@ class TokenStudio extends Component {
             />
           </div>
           <div
-            className="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center"
+            className="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center"
             onClick={() => st20Complete ? this.props.toggleForm({ ...openState, sto: true }) : null}
           >
             <Tile
