@@ -5,6 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import { connect } from 'react-redux';
 
 import renderTextField from '../components/forms/textBox';
 import renderSelectField from '../components/forms/selectField';
@@ -41,11 +42,25 @@ const customContentStyle = {
 class ST20Form extends Component {
 
   componentWillMount = () => {
-    const countryList = countries.getNameList()
-    this.setState({ countryList })
+    let cList = [];
+    const countryList = countries.getNameList();
+    for (constkey in countryList) {
+      cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
+    }
+    this.setState({ cList })
+  }
+
+  renderRegion = () => {
+    let cList = [];
+    const countryList = countries.getNameList();
+    for (constkey in countryList) {
+      cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
+    }
+    return cList;
   }
 
   render() {
+    const { list } = this.state;
     const actions = [
       <FlatButton
         label="Cancel"
@@ -99,13 +114,20 @@ class ST20Form extends Component {
                 component={renderSelectField}
                 label="Jurisdiction"
               >
-                {/* {
-                  this.state.countryList.map(c => {
-                    <MenuItem value={c} primaryText={Object.keys(c)} />
-                  })
-                } */}
-                <MenuItem value="Partnership" primaryText="Partnership" />
+                {list}
               </Field>
+            </div>
+            <br />
+            <div>
+              {
+                <Field
+                  name="jurisdiction"
+                  component={renderSelectField}
+                  label="Jurisdiction"
+                >
+                  {list}
+                </Field>
+              }
             </div>
           </form>
         </Dialog>
@@ -124,4 +146,8 @@ ST20Form = reduxForm({
   validate,
 })(ST20Form);
 
-export default ST20Form;
+const mapStateToProps = (state, ownProps) => ({
+  formState: state.form.st20Form,  // <== Inject the form store itself
+});
+
+export default connect(mapStateToProps)(ST20Form);
