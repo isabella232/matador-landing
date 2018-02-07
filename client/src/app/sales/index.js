@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class SalesPage extends Component {
+
+  componentWillMount = () => {};
+  
   render() {
     return (
       <div>
