@@ -13,7 +13,7 @@ class App extends Component {
     const { route } = this.props;
     return (
       <div className="App">
-        <h1>Matafuckingdor</h1>
+        <h1>Matador</h1>
         <div>
           {renderRoutes(route.routes)}
         </div>
