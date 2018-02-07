@@ -9,23 +9,23 @@ dynamoose.AWS.config.update({
 dynamoose.setDefaults({ create: true });
 
 const Company = new dynamoose.Schema({
-  rep: {
+  repName: {
     type: String,  //Name of rep
-    required: true,
-    title: {
-      type: String, // Title of rep
-      required: true
-    },
-    email: {
-      type: String, // Email of rep
-      required: true
-    },
-    phone: {
-      type: Number,
-      required: true
-    }
+    required: true
   },
-  name: {
+  repTitle: {
+    type: String, // Title of rep
+    required: true
+  },
+  repEmail: {
+    type: String, // Email of rep
+    required: true
+  },
+  repPhone: {
+    type: Number,
+    required: true
+  },
+  companyName: {
     type: String,
     required: true
   },
