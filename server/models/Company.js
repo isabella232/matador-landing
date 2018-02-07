@@ -9,6 +9,10 @@ dynamoose.AWS.config.update({
 dynamoose.setDefaults({ create: true });
 
 const Company = new dynamoose.Schema({
+  id: {
+    type: Number,
+
+  },
   repName: {
     type: String,  //Name of rep
     required: true
