@@ -11,9 +11,9 @@ const mongoose = require('mongoose');
 const routes = require('./routes/index');
 
 // AWS DB Setup
-export AWS_ACCESS_KEY_ID="Your AWS Access Key ID"
-export AWS_SECRET_ACCESS_KEY="Your AWS Secret Access Key"
-export AWS_REGION="us-east-1"
+// export AWS_ACCESS_KEY_ID="Your AWS Access Key ID"
+// export AWS_SECRET_ACCESS_KEY="Your AWS Secret Access Key"
+// export AWS_REGION="us-east-1"
 
 // Express Server
 const app = express();

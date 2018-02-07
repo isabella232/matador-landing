@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
 // Route Imports
-const company = require('./company');
+const companies = require('./companies');
 const tokens = require('./tokens');
 
 // Routes
-router.use('/company', company);
-router.use('/books', books);
+router.use('/companies', companies);
+router.use('/tokens', tokens);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

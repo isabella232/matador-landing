@@ -44,7 +44,7 @@ class ST20Form extends Component {
   componentWillMount = () => {
     let cList = [];
     const countryList = countries.getNameList();
-    for (var key in countryList) {
+    for (constkey in countryList) {
       cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
     }
     this.setState({ cList })
@@ -53,7 +53,7 @@ class ST20Form extends Component {
   renderRegion = () => {
     let cList = [];
     const countryList = countries.getNameList();
-    for (var key in countryList) {
+    for (constkey in countryList) {
       cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
     }
     return cList;
