@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const tokens = require('./routes/tokens');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(methodOverride());
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/tokens', tokens);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
