@@ -41,4 +41,5 @@ const Token = new dynamoose.Schema({
     type: Date
   }
 });
+
 module.exports = dynamoose.model('Token', Token);

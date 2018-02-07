@@ -42,4 +42,5 @@ const Company = new dynamoose.Schema({
     required: true
   }
 });
+
 module.exports = dynamoose.model('Company', Company);
