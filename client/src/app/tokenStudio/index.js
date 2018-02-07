@@ -23,7 +23,7 @@ class TokenStudio extends Component {
 	static propTypes = {
 	  createContact: PropTypes.func.isRequired,
 	  createCompany: PropTypes.func.isRequired,
-		createST20: PropTypes.func.isRequired,
+      createST20: PropTypes.func.isRequired,
 	  createSTO: PropTypes.func.isRequired,
 	};
 
