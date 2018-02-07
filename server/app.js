@@ -5,14 +5,15 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const mongoose = require('mongoose');
+require('dotenv').config();
 
-const index = require('./routes/index');
-const users = require('./routes/users');
-const tokens = require('./routes/tokens');
+// Import Routes
+const routes = require('./routes/index');
 
+// Express Server
 const app = express();
 
+// Logger, Parser, Cookies
 app.use(helmet())
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,9 +21,17 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(methodOverride());
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/tokens', tokens);
+
+
+// Cross Origin middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+});
+
+//  Connect all our routes to our application
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
