@@ -42,7 +42,7 @@ class TokenStudio extends Component {
           >
             <Tile
               focused={!contactComplete & !companyComplete && !st20Complete && !stoComplete}
-              completed={companyComplete}
+              completed={contactComplete}
               icon={<ContactIcon style={IconStyle} />}
               title="Contact Information"
             />
