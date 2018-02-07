@@ -12,21 +12,16 @@ import renderSelectField from '../components/forms/selectField';
 const validate = (values) => {
   const errors = {};
   const requiredFields = [
-    'legalName',
-    'type',
-    'email',
+    'companyName',
+    'entityType',
+    'address',
+    'website',
   ];
   requiredFields.forEach((field) => {
     if (!values[field]) {
       errors[field] = 'Required';
     }
   });
-  if (
-    values.email &&
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-  ) {
-    errors.email = 'Invalid email address';
-  }
   return errors;
 };
 
@@ -63,7 +58,7 @@ class CompanyInfoForm extends Component {
           <form onSubmit={() => this.props.submit()}>
             <div>
               <Field
-                name="legalName"
+                name="companyName"
                 component={renderTextField}
                 label="Legal Business Name"
               />
@@ -71,7 +66,7 @@ class CompanyInfoForm extends Component {
             <br />
             <div>
               <Field
-                name="type"
+                name="entityType"
                 component={renderSelectField}
                 label="Legal Entity Type"
               >
@@ -82,9 +77,17 @@ class CompanyInfoForm extends Component {
             <br />
             <div>
               <Field
-                name="email"
+                name="address"
                 component={renderTextField}
-                label="Primary Email"
+                label="Business Addres"
+              />
+            </div>
+            <br />
+            <div>
+              <Field
+                name="website"
+                component={renderTextField}
+                label="Business Website"
               />
             </div>
           </form>
