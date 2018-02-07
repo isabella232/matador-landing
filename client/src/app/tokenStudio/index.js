@@ -116,7 +116,12 @@ class TokenStudio extends Component {
         <StoForm
           open={openState.sto}
 					close={() => this.props.toggleForm({ ...openState, sto: false })}
-          onSubmit={() => this.props.createSTO(form.stoForm.values)}
+          onSubmit={() => {
+						this.props.createSTO({
+							...form.st20Form.values,
+							...form.stoForm.values
+						})
+					}}
         />
       </div>
     );

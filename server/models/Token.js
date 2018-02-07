@@ -26,19 +26,24 @@ const Token = new dynamoose.Schema({
     required: true
   },
   offeringType: {
-    type: String
+    type: String,
+    required: true
   },
   cap: {
-    type: Number
+    type: Number,
+    required: true
   },
   quorum: {
-    type: Number
+    type: Number,
+    required: true
   },
   startDate: {
-    type: Date
+    type: Date,
+    required: true
   },
   endDate: {
-    type: Date
+    type: Date,
+    required: true
   }
 });
 module.exports = dynamoose.model('Token', Token);
