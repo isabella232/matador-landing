@@ -5,19 +5,17 @@ import MenuItem from 'material-ui/MenuItem';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import { connect } from 'react-redux';
 
 import renderTextField from '../components/forms/textBox';
 import renderSelectField from '../components/forms/selectField';
 
-const countries = require('country-list')();
-
 const validate = (values) => {
   const errors = {};
   const requiredFields = [
-    'legalName',
-    'type',
-    'email',
+    'repName',
+    'repTitle',
+    'repEmail',
+    'repPhone',
   ];
   requiredFields.forEach((field) => {
     if (!values[field]) {
@@ -26,7 +24,7 @@ const validate = (values) => {
   });
   if (
     values.email &&
-		!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
   ) {
     errors.email = 'Invalid email address';
   }
@@ -39,28 +37,8 @@ const customContentStyle = {
   maxWidth: width,
 };
 
-class ST20Form extends Component {
-
-  componentWillMount = () => {
-    let cList = [];
-    const countryList = countries.getNameList();
-    for (const key in countryList) {
-      cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
-    }
-    this.setState({ cList })
-  }
-
-  renderRegion = () => {
-    let cList = [];
-    const countryList = countries.getNameList();
-    for (const key in countryList) {
-      cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
-    }
-    return cList;
-  }
-
+class ContactInfoForm extends Component {
   render() {
-    const { list } = this.state;
     const actions = [
       <FlatButton
         label="Cancel"
@@ -77,7 +55,7 @@ class ST20Form extends Component {
     return (
       <div>
         <Dialog
-          title="ST-20 Details"
+          title="Company Details"
           actions={actions}
           modal
           contentStyle={customContentStyle}
@@ -86,48 +64,34 @@ class ST20Form extends Component {
           <form onSubmit={() => this.props.submit()}>
             <div>
               <Field
-                name="ticker"
+                name="repName"
                 component={renderTextField}
-                label="Ticker Name"
+                label="Representative Name"
               />
             </div>
             <br />
             <div>
               <Field
-                name="supply"
+                name="repTitle"
                 component={renderTextField}
-                label="Total Supply"
+                label="Representative Title"
               />
             </div>
             <br />
             <div>
               <Field
-                name="owner"
+                name="repEmail"
                 component={renderTextField}
-                label="Owner Address"
+                label="Representative Email"
               />
             </div>
             <br />
             <div>
               <Field
-                name="jurisdiction"
-                component={renderSelectField}
-                label="Jurisdiction"
-              >
-                {list}
-              </Field>
-            </div>
-            <br />
-            <div>
-              {
-                <Field
-                  name="jurisdiction"
-                  component={renderSelectField}
-                  label="Jurisdiction"
-                >
-                  {list}
-                </Field>
-              }
+                name="repPhone"
+                component={renderTextField}
+                label="Representative Phone Number"
+              />
             </div>
           </form>
         </Dialog>
@@ -136,18 +100,13 @@ class ST20Form extends Component {
   }
 }
 
-
-ST20Form.propTypes = {
+ContactInfoForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-ST20Form = reduxForm({
-  form: 'st20Form',
+ContactInfoForm = reduxForm({
+  form: 'contactInfoForm',
   validate,
-})(ST20Form);
+})(ContactInfoForm);
 
-const mapStateToProps = (state, ownProps) => ({
-  formState: state.form.st20Form,  // <== Inject the form store itself
-});
-
-export default connect(mapStateToProps)(ST20Form);
+export default ContactInfoForm;

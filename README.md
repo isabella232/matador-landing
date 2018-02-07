@@ -4,4 +4,8 @@
 [![dependencies Status](https://david-dm.org/Matador-Advisory/matador-wizard/status.svg?style=flat-square)](https://david-dm.org/Matador-Advisory/matador-wizard)
 [![devDependencies Status](https://david-dm.org/Matador-Advisory/matador-wizard/status.svg?style=flat-square)](https://david-dm.org/Matador-Advisory/matador-wizard?type=dev)
   
-Create a branch in this order: _name/feature-name_ and then send a PR.
+Create a branch in this order: _name/feature-name_ and then send a PR.  
+  
+Run **_bash scripts/installs.sh_** to install packages for both client & server.  
+  
+Use **_bash scripts/run.sh_** to run both client & server in 1 terminal if you need to.
