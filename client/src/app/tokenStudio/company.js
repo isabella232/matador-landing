@@ -32,18 +32,12 @@ const validate = (values) => {
 
 const width = window.innerWidth <= 900 ? '80%' : '30%';
 const customContentStyle = {
-	width: 'auto',
-	maxWidth: width,
+  width: 'auto',
+  maxWidth: width,
 };
 
 class CompanyInfoForm extends Component {
-
-  static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-  };
-
   render() {
-
     const actions = [
       <FlatButton
         label="Cancel"
@@ -58,47 +52,51 @@ class CompanyInfoForm extends Component {
     ];
 
     return (
-        <div>
-          <Dialog
-            title="Company Details"
-            actions={actions}
-            modal
-            contentStyle={customContentStyle}
-            open={this.props.open}
-          >
-            <form onSubmit={() => this.props.submit()}>
-              <div>
-                <Field
-                  name="legalName"
-                  component={renderTextField}
-                  label="Legal Business Name"
-                />
-              </div>
-              <br />
-              <div>
-                  <Field
-                      name="type"
-                      component={renderSelectField}
-                      label="Legal Entity Type"
-                  >
-                      <MenuItem value="Corporation" primaryText="Corporation" />
-                      <MenuItem value="Partnership" primaryText="Partnership" />
-                  </Field>
-              </div>
-              <br />
-              <div>
-                <Field
-                  name="email"
-                  component={renderTextField}
-                  label="Primary Email"
-                />
-              </div>
-            </form>
-          </Dialog>
-        </div>
+      <div>
+        <Dialog
+          title="Company Details"
+          actions={actions}
+          modal
+          contentStyle={customContentStyle}
+          open={this.props.open || false}
+        >
+          <form onSubmit={() => this.props.submit()}>
+            <div>
+              <Field
+                name="legalName"
+                component={renderTextField}
+                label="Legal Business Name"
+              />
+            </div>
+            <br />
+            <div>
+              <Field
+                name="type"
+                component={renderSelectField}
+                label="Legal Entity Type"
+              >
+                <MenuItem value="Corporation" primaryText="Corporation" />
+                <MenuItem value="Partnership" primaryText="Partnership" />
+              </Field>
+            </div>
+            <br />
+            <div>
+              <Field
+                name="email"
+                component={renderTextField}
+                label="Primary Email"
+              />
+            </div>
+          </form>
+        </Dialog>
+      </div>
     );
   }
 }
+
+CompanyInfoForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 CompanyInfoForm = reduxForm({
   form: 'companyInfoForm',
