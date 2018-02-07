@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import GroupIcon from 'material-ui/svg-icons/social/group';
 import AssignmentIcon from 'material-ui/svg-icons/action/assignment';
 import GavelIcon from 'material-ui/svg-icons/action/gavel';
+import { Link } from 'react-router-dom';
 
 import CompanyInfo from './company';
 import St20Form from './st20';
@@ -65,13 +66,15 @@ class TokenStudio extends Component {
             />
           </div>
         </div>
-			<br />
-          <RaisedButton
-            className="mt-4"
-            label="Create Token"
-            primary
-            disabled={!companyComplete || !st20Complete || !stoComplete}
-          />
+				<br />
+				<Link to={{ pathname: '/sales'}}>
+	          <RaisedButton
+	            className="mt-4"
+	            label="Create Token"
+	            primary
+	            disabled={!companyComplete || !st20Complete || !stoComplete}
+	          />
+				</Link>
         <div className="mt-2">
           <h6>Back</h6>
         </div>

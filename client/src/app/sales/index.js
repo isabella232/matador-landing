@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 class SalesPage extends Component {
 
-  componentWillMount = () => {};
-  
+  componentWillMount = () => {
+    console.log(this.props.match.params.id);
+  };
+
   render() {
     return (
-      <div>
-        <h1>SalesPage</h1>
-      </div>
-    );
+      <h1>{this.props.match.params.id}</h1>
+    )
   }
 }
 

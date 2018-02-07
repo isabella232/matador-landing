@@ -26,7 +26,7 @@ const routes = [
       {
         path: '/sales/:id',
         component: SalesPage,
-        exact: false,
+        exact: true,
       },
     ],
   },
