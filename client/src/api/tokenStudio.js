@@ -6,6 +6,10 @@ export const toggleForm = value => (dispatch) => {
   dispatch({ type: TS.TOGGLE_FORM, payload: value });
 };
 
+export const createContact = () => function (dispatch) {
+  dispatch({ type: TS.CREATE_CONTACT });
+};
+
 export const createCompany = values => function (dispatch) {
   console.log(values);
   axios.post(`${API_URL}/api/companies`, values)
@@ -17,14 +21,8 @@ export const createCompany = values => function (dispatch) {
     });
 };
 
-export const createST20 = values => function (dispatch) {
-  axios.post(`${API_URL}/api/tokens`, values)
-    .then((res) => {
-      dispatch({ type: TS.CREATE_ST20_FAILED });
-    })
-    .catch((err) => {
-      dispatch({ type: TS.CREATE_ST20_FAILED, payload: err });
-    });
+export const createST20 = () => function (dispatch) {
+  dispatch({ type: TS.CREATE_ST20 });
 };
 
 export const createSTO = (values, id) => function (dispatch) {
