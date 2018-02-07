@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   checklist3: false,
   checklist4: false,
   checklist5: false,
+  checklist6: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
