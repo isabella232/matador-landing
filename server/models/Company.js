@@ -19,7 +19,8 @@ const Company = new dynamoose.Schema({
   },
   repEmail: {
     type: String, // Email of rep
-    required: true
+    required: true,
+    hashKey: true,
   },
   repPhone: {
     type: Number,

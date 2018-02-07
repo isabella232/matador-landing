@@ -23,7 +23,7 @@ class TokenStudio extends Component {
 	static propTypes = {
 	  createContact: PropTypes.func.isRequired,
 	  createCompany: PropTypes.func.isRequired,
-		createST20: PropTypes.func.isRequired,
+      createST20: PropTypes.func.isRequired,
 	  createSTO: PropTypes.func.isRequired,
 	};
 
@@ -42,7 +42,7 @@ class TokenStudio extends Component {
           >
             <Tile
               focused={!contactComplete & !companyComplete && !st20Complete && !stoComplete}
-              completed={companyComplete}
+              completed={contactComplete}
               icon={<ContactIcon style={IconStyle} />}
               title="Contact Information"
             />
