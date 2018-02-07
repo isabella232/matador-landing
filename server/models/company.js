@@ -10,7 +10,7 @@ const Company = new Schema({
       required: true
     },
     email: {
-      tpye: String, // Email of rep
+      type: String, // Email of rep
       required: true
     },
     number: {
