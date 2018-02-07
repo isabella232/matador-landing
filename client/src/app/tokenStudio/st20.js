@@ -39,19 +39,6 @@ const customContentStyle = {
 };
 
 class ST20Form extends Component {
-  render() {
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary
-        onClick={() => this.props.close()}
-      />,
-      <RaisedButton
-        label="Submit"
-        primary
-        onClick={() => this.props.onSubmit()}
-      />,
-    ];
 
   componentWillMount = () => {
     const countryList = countries.getNameList()
@@ -72,7 +59,7 @@ class ST20Form extends Component {
       />,
     ];
 
-	return (
+    return (
       <div>
         <Dialog
           title="ST-20 Details"

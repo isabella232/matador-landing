@@ -16,6 +16,14 @@ import Indicator from '../components/indicator/indicator';
 class Education extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      visibility1: false,
+      visibility2: false,
+      visibility3: false,
+      visibility4: false,
+      visibility5: false,
+    }
   }
 
   static propTypes = {
@@ -26,150 +34,116 @@ class Education extends Component {
     console.log(!this.props.EducationReducer.checklist4)
     return (
       <div className="container-fluid">
-        <h1 className="text-center ">Edu-fucking-cation</h1>
-        <form className="container-fluid" style={{ 'border': '1px solid black' }}>
+        <h1 className="text-center ">Education</h1>
+
+        <form className="container-fluid" >
           <div className="col-xs-12  d-flex justify-content-center">
-            <div className="col-xs-12 col-sm-8 col-md-8 col-lg-6" style={{ 'border': '1px solid black' }}>
+            <div className="col-xs-12 col-sm-8 col-md-8 col-lg-6" >
               <div className="container-fluid" >
 
-                {/* 
-                <div
-                  className={this.props.EducationReducer.checklist1 ? "checkedOff " : '' + "col-xs-12 checklistItem z-depth-2"}
-                  id="education1"
-                >
-                  <div className="row">
-                    <span className="ml-4 mr-2 d-flex align-self-center align-items-start">
-                      <Indicator active={this.props.EducationReducer.checklist1} />
-                    </span>
 
+                <div>
+                  <div onClick={() => { this.setState({ visibility1: !this.state.visibility1 }) }}>
+                    <ChecklistItem
+                      text={
+                        <span>
+                          Read the <a href="https://www.polymath.network/resources/whitepaper" target="_blank">Polymath Whitepaper</a>
+                        </span>
+                      }
+                      referenceBack={true}
+                      reference={this.props.EducationReducer.checklist1}
+                      EducationReducer={this.props.EducationReducer}
+                      toggleChecklist={this.props.toggleChecklist}
+                      checklistKey={'checklist1'}
+                    />
                   </div>
-                </div> */}
-
-                <ChecklistItem
-                  text={
-                    <span>
-                      Read the
-                    <a
-                        href="https://www.polymath.network/resources/whitepaper"
-                        target="_blank"
-                        onClick={() => {
-                          this.props.toggleChecklist({
-                            ...this.props.EducationReducer,
-                            checklist1: true
-                          })
-                        }}
-                      >
-                        Polymath Whitepaper
-                    </a>
-                    </span>
-                  }
-                  referenceBack={true}
-                  reference={this.props.EducationReducer.checklist1}
-                  EducationReducer={this.props.EducationReducer}
-                  toggleChecklist={this.props.toggleChecklist}
-                  checklistKey={'checklist1'}
-                />
-
-                <ChecklistItem
-                  text={<div>Watch the Polymath instructional video, which explains ST20 and what you need to know to make one</div>}
-                  referenceBack={this.props.EducationReducer.checklist1}
-                  reference={this.props.EducationReducer.checklist2}
-                  EducationReducer={this.props.EducationReducer}
-                  toggleChecklist={this.props.toggleChecklist}
-                  checklistKey={'checklist2'}
-                />
-
-                <ChecklistItem
-                  text={'Get MetaMask'}
-                  referenceBack={this.props.EducationReducer.checklist2}
-                  reference={this.props.EducationReducer.checklist3}
-                  EducationReducer={this.props.EducationReducer}
-                  toggleChecklist={this.props.toggleChecklist}
-                  checklistKey={'checklist3'}
-                />
-
-                <ChecklistItem
-                  text={'Purchase POLY tokens'}
-                  referenceBack={this.props.EducationReducer.checklist3}
-                  reference={this.props.EducationReducer.checklist4}
-                  EducationReducer={this.props.EducationReducer}
-                  toggleChecklist={this.props.toggleChecklist}
-                  checklistKey={'checklist4'}
-
-                />
-
-                {/* <div
-                  className={this.props.EducationReducer.checklist2 ? "checkedOff " : '' + "col-xs-12 checklistItem z-depth-2"}
-                  id="education2"
-                  onClick={() => {
-                    this.props.EducationReducer.checklist1 ? this.props.toggleChecklist({
-                      ...this.props.EducationReducer,
-                      checklist2: true,
-                    })
-                      : null
-                  }}
-                >
-                  <div className="row">
-                    <span className="ml-4 mr-2 d-flex align-self-center align-items-start">
-                      <Indicator active={this.props.EducationReducer.checklist2} />
-                    </span>
-                    Watch the Polymath instructional video, which explains ST20 and what you need to know to make one
-                  </div>
+                  {this.state.visibility1 ?
+                    <div className="dropdown">
+                      Now this is a textbox where we are storing information
+                      <FlatButton onClick={() => { this.setState({ visibility1: !this.state.visibility1 }); }} label="Next" className='' />
+                    </div>
+                    : null}
                 </div>
 
-
-
-                <div
-                  className={this.props.EducationReducer.checklist3 ? "checkedOff " : '' + "col-xs-12 checklistItem z-depth-2"}
-                  id="education3"
-                  onClick={() => {
-                    this.props.EducationReducer.checklist2 ? this.props.toggleChecklist({
-                      ...this.props.EducationReducer,
-                      checklist3: true,
-                    })
-                      : null
-                  }}
-                >
-                  {/* <div className="row">
-                    <span className="ml-4 mr-2 d-flex align-self-center align-items-start">
-                      <Indicator active={this.props.EducationReducer.checklist3} />
-                    </span>
-                    Watch the Polymath instructional video, which explains ST20 and what you need to know to make one
+                <div>
+                  <div onClick={() => { this.setState({ visibility2: !this.state.visibility2 }) }}>
+                    <ChecklistItem
+                      text={
+                        <div>
+                          Watch the Polymath instructional video, which explains ST20 and what you need to know to make one
                   </div>
-                </div> */}
-
-
-                {/* 
-                <div
-                  className="text-box z-depth-2 d-none"
-                >
-                  Metamask in a chrome extension that makes it very easy to use ethereum in the browser. The is the simpliest way to use an account with the Polymath Network to
-                  make ST-20 tokens. However it is not required and if you know what you are doing you can use many other services. Click here to see how to get a metamask account. Once
-                  you have it set up, we are going to ask you to sign a message in the browser to go forward. Then you can go to the next step.
+                      }
+                      referenceBack={this.props.EducationReducer.checklist1}
+                      reference={this.props.EducationReducer.checklist2}
+                      EducationReducer={this.props.EducationReducer}
+                      toggleChecklist={this.props.toggleChecklist}
+                      checklistKey={'checklist2'}
+                    />
+                  </div>
+                  {this.state.visibility2 ?
+                    <div className="dropdown">
+                      Now this is a textbox where we are storing information
+                      <FlatButton onClick={() => { this.setState({ visibility2: !this.state.visibility2 }); }} label="Next" className='' />
+                    </div>
+                    : null}
                 </div>
 
-
-
-                <div
-                  className={this.props.EducationReducer.checklist4 ? "checkedOff " : '' + "col-xs-12 checklistItem z-depth-2"}
-                  id="education4"
-                  onClick={() => {
-                    this.props.EducationReducer.checklist3 ? this.props.toggleChecklist({
-                      ...this.props.EducationReducer,
-                      checklist4: true,
-                    })
-                      : null
-                  }}
-                >
-                  <div className="row">
-                    <span className="ml-4 mr-2 d-flex align-self-center align-items-start">
-                      <Indicator active={this.props.EducationReducer.checklist4} />
-                    </span>
-                    Purchase POLY tokens
+                <div>
+                  <div onClick={() => { this.setState({ visibility3: !this.state.visibility3 }) }}>
+                    <ChecklistItem
+                      text={'Get MetaMask'}
+                      referenceBack={this.props.EducationReducer.checklist2}
+                      reference={this.props.EducationReducer.checklist3}
+                      EducationReducer={this.props.EducationReducer}
+                      toggleChecklist={this.props.toggleChecklist}
+                      checklistKey={'checklist3'}
+                    />
                   </div>
-                </div> */}
+                  {this.state.visibility3 ?
+                    <div className="dropdown">
+                      Now this is a textbox where we are storing information
+                      <FlatButton onClick={() => { this.setState({ visibility3: !this.state.visibility3 }); }} label="Next" className='' />
+                    </div>
+                    : null}
+                </div>
 
+                <div>
+                  <div onClick={() => { this.setState({ visibility4: !this.state.visibility4 }) }}>
+                    <ChecklistItem
+                      text={'Purchase POLY tokens'}
+                      referenceBack={this.props.EducationReducer.checklist3}
+                      reference={this.props.EducationReducer.checklist4}
+                      EducationReducer={this.props.EducationReducer}
+                      toggleChecklist={this.props.toggleChecklist}
+                      checklistKey={'checklist4'}
+                    />
+                  </div>
+                  {this.state.visibility4 ?
+                    <div className="dropdown">
+                      Now this is a textbox where we are storing information
+                      <FlatButton onClick={() => { this.setState({ visibility4: !this.state.visibility4 }); }} label="Next" className='' />
+                    </div>
+                    : null}
+                </div>
 
+                <div>
+                  <div onClick={() => { this.setState({ visibility5: !this.state.visibility5 }) }}>
+                    <ChecklistItem
+                      text={'Get MetaMask'}
+                      referenceBack={this.props.EducationReducer.checklist4}
+                      reference={this.props.EducationReducer.checklist5}
+                      EducationReducer={this.props.EducationReducer}
+                      toggleChecklist={this.props.toggleChecklist}
+                      checklistKey={'checklist5'}
+                    />
+                  </div>
+                  {this.state.visibility5 ?
+                    <div className="dropdown">
+                      Now this is a textbox where we are storing information
+                      <FlatButton onClick={() => { this.setState({ visibility5: !this.state.visibility5 }); }} label="Next" className='' />
+                    </div>
+                    : null}
+                </div>
 
               </div>
             </div>
@@ -177,12 +151,12 @@ class Education extends Component {
         </form>
 
 
-        <span className="offset-lg-4 offset-md-3 offset-sm-3 offset-xs-2 d-flex">
-          <span className="justify-content-center z-depth-1  col-xs-12">
+        <span className=" d-flex justify-content-center" >
+          <span className=" z-depth-1" >
             <FlatButton href="/" label="Back" className='' />
           </span>
-          <span className="z-depth-1 offset-lg-2 offset-md-2 offset-sm-2">
-            <FlatButton href="/tokenstudio" label="Continue" disabled={!this.props.EducationReducer.checklist4} />
+          <span className="z-depth-1 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2" >
+            <FlatButton href="/tokenstudio" label="Continue" disabled={!this.props.EducationReducer.checklist5} />
           </span>
         </span>
 
