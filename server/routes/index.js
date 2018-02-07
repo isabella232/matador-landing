@@ -5,8 +5,8 @@ const companies = require('./companies');
 const tokens = require('./tokens');
 
 // Routes
-router.use('/companies', companies);
-router.use('/tokens', tokens);
+router.use('/api/companies', companies);
+router.use('/api/tokens', tokens);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

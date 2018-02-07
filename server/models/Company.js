@@ -1,7 +1,14 @@
 const dynamoose = require('dynamoose');
-const Schema = dynamoose.Schema;
 
-const Company = new Schema({
+dynamoose.AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
+});
+
+dynamoose.setDefaults({ create: true });
+
+const Company = new dynamoose.Schema({
   rep: {
     type: String,  //Name of rep
     required: true,
@@ -13,7 +20,7 @@ const Company = new Schema({
       type: String, // Email of rep
       required: true
     },
-    number: {
+    phone: {
       type: Number,
       required: true
     }
@@ -22,7 +29,7 @@ const Company = new Schema({
     type: String,
     required: true
   },
-  type: {
+  entityType: {
     type: String,
     required: true
   },

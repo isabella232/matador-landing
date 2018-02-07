@@ -1,17 +1,18 @@
 const router = require('express').Router();
 
-const Token = require('../models/token');
+const Token = require('../models/Token');
 
 /* GET tokens listing. */
-router.get('/api/tokens', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.status(200).json('tokens api');
 });
 
 // POST create tokens
-router.post('/api/tokens', function(req, res, next) {
-  const newToken = new Token(req.body.data);
+router.post('/', function(req, res, next) {
+  console.log(req.body)
+  const newToken = new Token(req.body);
   newToken.save(function(err) {
-    if(errr) {
+    if(err) {
       console.log(err);
       res.status(401).send();
       return;
@@ -21,7 +22,7 @@ router.post('/api/tokens', function(req, res, next) {
 });
 
 // PUT token
-router.put('/api/tokens', function(req, res, next) {
+router.put('/', function(req, res, next) {
   Token.update(req.body.data, function(err) {
     if(err) {
       console.log(err);
