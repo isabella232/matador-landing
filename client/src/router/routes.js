@@ -1,6 +1,6 @@
 import App from '../App';
 import Home from '../app/home/index';
-import Education from '../app/education/index';
+import Education from '../app/education/education';
 import TokenStudio from '../app/tokenStudio/index';
 import SalesPage from '../app/sales/index';
 
