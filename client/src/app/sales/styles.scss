@@ -1,0 +1,12 @@
+@import "../stylesheets/shadows";
+
+$triangleSize: 10px;
+
+.container {
+  width: 80%;
+
+  .line-break {
+    width: 70%;
+    border: 1px solid lightgrey;
+  }
+}
