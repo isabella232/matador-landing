@@ -28,7 +28,7 @@ export default class ChecklistItem extends Component {
     return (
       <div>
         <div onClick={() => { this.setState({ visibility: !this.state.visibility }); }}>
-          <div className={this.props.reference ? `checkedOff ${classString}` : classString}>
+          <div className={this.props.referenceBack && !this.props.reference ? classString : `checkedOff ${classString}`}>
             <div className="ml-2 mr-2">
               <Indicator active={this.props.reference} />
             </div>
@@ -40,7 +40,7 @@ export default class ChecklistItem extends Component {
             <div className="dropdown z-depth-2 d-block pl-2">
               {this.props.dropdownText}
               <div className="d-flex flex-row-reverse ">
-                <RaisedButton style={{ border: '1px black solid' }} onClick={() => { this.props.referenceBack ? this.setVisibilityAndMarkComplete() : null; }} label="Next" />
+                <RaisedButton primary onClick={() => { this.props.referenceBack ? this.setVisibilityAndMarkComplete() : null; }} label="Next" />
               </div>
             </div>
             : null}
