@@ -15,11 +15,6 @@ export default class ChecklistItem extends Component {
   }
 
   setVisibilityAndMarkComplete() {
-    console.log(this.state.visibility);
-    console.log(this.props.EducationReducer);
-    console.log(this.props.checklistKey);
-
-
     this.props.toggleChecklist({
       ...this.props.EducationReducer,
       [this.props.checklistKey]: true,
