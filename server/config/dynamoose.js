@@ -7,3 +7,5 @@ dynamoose.AWS.config.update({
 });
 
 dynamoose.setDefaults({ create: true });
+
+module.exports = dynamoose;
