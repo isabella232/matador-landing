@@ -1,31 +1,29 @@
 const dynamoose = require('dynamoose');
-
-dynamoose.AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
-});
-
-dynamoose.setDefaults({ create: true });
+require('../config/dynamoose');
 
 const Company = new dynamoose.Schema({
-  rep: {
-    type: String,  //Name of rep
-    required: true,
-    title: {
-      type: String, // Title of rep
-      required: true
-    },
-    email: {
-      type: String, // Email of rep
-      required: true
-    },
-    phone: {
-      type: Number,
-      required: true
-    }
+  id: {
+    type: Number,
+
   },
-  name: {
+  repName: {
+    type: String,  //Name of rep
+    required: true
+  },
+  repTitle: {
+    type: String, // Title of rep
+    required: true
+  },
+  repEmail: {
+    type: String, // Email of rep
+    required: true,
+    hashKey: true,
+  },
+  repPhone: {
+    type: Number,
+    required: true
+  },
+  companyName: {
     type: String,
     required: true
   },
@@ -42,4 +40,5 @@ const Company = new dynamoose.Schema({
     required: true
   }
 });
+
 module.exports = dynamoose.model('Company', Company);

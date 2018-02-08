@@ -41,6 +41,7 @@
 
 // class ST20Form extends Component {
 
+<<<<<<< HEAD
 //   componentWillMount = () => {
 //     let cList = [];
 //     const countryList = countries.getNameList();
@@ -58,6 +59,25 @@
 //     }
 //     return cList;
 //   }
+=======
+  componentWillMount = () => {
+    let cList = [];
+    const countryList = countries.getNameList();
+    for (const key in countryList) {
+      cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
+    }
+    this.setState({ cList })
+  }
+
+  renderRegion = () => {
+    let cList = [];
+    const countryList = countries.getNameList();
+    for (const key in countryList) {
+      cList.push(<MenuItem key={key} value={countryList[key]} primaryText={key.toUpperCase()} />)
+    }
+    return cList;
+  }
+>>>>>>> 725cb118dc3d8b5f0876db348c98a6825aacd2b7
 
 //   render() {
 //     const { list } = this.state;

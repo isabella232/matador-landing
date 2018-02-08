@@ -1,12 +1,5 @@
 const dynamoose = require('dynamoose');
-
-dynamoose.AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
-});
-
-dynamoose.setDefaults({ create: true });
+require('../config/dynamoose');
 
 const Token = new dynamoose.Schema({
   ticker: {
@@ -26,19 +19,25 @@ const Token = new dynamoose.Schema({
     required: true
   },
   offeringType: {
-    type: String
+    type: String,
+    required: true
   },
   cap: {
-    type: Number
+    type: Number,
+    required: true
   },
   quorum: {
-    type: Number
+    type: Number,
+    required: true
   },
   startDate: {
-    type: Date
+    type: Date,
+    required: true
   },
   endDate: {
-    type: Date
+    type: Date,
+    required: true
   }
 });
+
 module.exports = dynamoose.model('Token', Token);

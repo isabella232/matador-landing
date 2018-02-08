@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Indicator from '../components/indicator/indicator';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 export default class ChecklistItem extends Component {
   constructor(props) {
@@ -26,9 +28,7 @@ export default class ChecklistItem extends Component {
     return (
       <div>
         <div onClick={() => { this.setState({ visibility: !this.state.visibility }); }}>
-          <div
-            className={this.props.reference ? `checkedOff ${classString}` : classString}
-          >
+          <div className={this.props.reference ? `checkedOff ${classString}` : classString}>
             <div className="ml-2 mr-2">
               <Indicator active={this.props.reference} />
             </div>
@@ -37,12 +37,13 @@ export default class ChecklistItem extends Component {
             </div>
           </div>
           {this.state.visibility ?
-            <div className="dropdown">
+            <div className="dropdown z-depth-2 d-block pl-2">
               {this.props.dropdownText}
-              {/* <FlatButton onClick={() => { this.setState({ visibility: !this.state.visibility }); }} label="Next" className="" /> */}
-              <FlatButton onClick={() => { this.props.referenceBack ? this.setVisibilityAndMarkComplete() : null; }} label="Next" />
+              <div className="d-flex flex-row-reverse ">
+                <RaisedButton style={{ border: '1px black solid' }} onClick={() => { this.props.referenceBack ? this.setVisibilityAndMarkComplete() : null; }} label="Next" />
+              </div>
             </div>
-                        : null}
+            : null}
         </div>
       </div>
     );

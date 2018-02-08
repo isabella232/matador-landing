@@ -41,7 +41,7 @@ class Education extends Component {
                   }
                   referenceBack={true}
                   dropdownText={
-                    <div>
+                    <div >
                       Polymath makes it easy for companies to “tokenize” their assets. Right now, launching a security token is a really difficult process.<br /><br /> Issuers need to make sure they have legitimate investors on board. They need to know who their investors are. They need to make sure they’re verified. They need to make sure they’re trading to the right people. <br /><br /> That verification process can be slow, and incredibly expensive. Polymath bakes KYC *directly into* the tokens. This way, the token “knows” who’s trading it. It “knows” where it’s going. <br /><br /> There’s no need to “verify” investors because the token regulates itself. It automatically restricts token holders from trading to anyone who’s not verified -- saving issuers a lot of time, money, and headaches. <br /><br /> Matador is ................
                     </div>
                   }
@@ -103,7 +103,7 @@ class Education extends Component {
                         <li>Basic personal information</li>
                         <li>Basic offering information</li>
                       </ul>
-                      Then you will go through the wizard and ...........
+                      Then you will go through the wizard and ........... do a bunch of crazy stuff and hopefully this works
                     </div>
                   } 
                   referenceBack={this.props.EducationReducer.checklist3}

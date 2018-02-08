@@ -11,7 +11,11 @@ node_js:
 
 cache:
   directories:
-    - "node_modules"
+    - "**/node_modules"
+
+#before_script:
+#  - scripts/installs.sh
 
 script:
-  - yarn test
+#  - scripts/run.sh
+  - scripts/installs.sh

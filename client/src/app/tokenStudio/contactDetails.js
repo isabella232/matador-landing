@@ -12,16 +12,22 @@ import renderSelectField from '../components/forms/selectField';
 const validate = (values) => {
   const errors = {};
   const requiredFields = [
-    'companyName',
-    'entityType',
-    'address',
-    'website',
+    'repName',
+    'repTitle',
+    'repEmail',
+    'repPhone',
   ];
   requiredFields.forEach((field) => {
     if (!values[field]) {
       errors[field] = 'Required';
     }
   });
+  if (
+    values.email &&
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+  ) {
+    errors.email = 'Invalid email address';
+  }
   return errors;
 };
 
@@ -31,7 +37,7 @@ const customContentStyle = {
   maxWidth: width,
 };
 
-class CompanyInfoForm extends Component {
+class ContactInfoForm extends Component {
   render() {
     const actions = [
       <FlatButton
@@ -58,36 +64,33 @@ class CompanyInfoForm extends Component {
           <form onSubmit={() => this.props.submit()}>
             <div>
               <Field
-                name="companyName"
+                name="repName"
                 component={renderTextField}
-                label="Legal Business Name"
+                label="Representative Name"
               />
             </div>
             <br />
             <div>
               <Field
-                name="entityType"
-                component={renderSelectField}
-                label="Legal Entity Type"
-              >
-                <MenuItem value="Corporation" primaryText="Corporation" />
-                <MenuItem value="Partnership" primaryText="Partnership" />
-              </Field>
-            </div>
-            <br />
-            <div>
-              <Field
-                name="address"
+                name="repTitle"
                 component={renderTextField}
-                label="Business Addres"
+                label="Representative Title"
               />
             </div>
             <br />
             <div>
               <Field
-                name="website"
+                name="repEmail"
                 component={renderTextField}
-                label="Business Website"
+                label="Representative Email"
+              />
+            </div>
+            <br />
+            <div>
+              <Field
+                name="repPhone"
+                component={renderTextField}
+                label="Representative Phone Number"
               />
             </div>
           </form>
@@ -97,13 +100,13 @@ class CompanyInfoForm extends Component {
   }
 }
 
-CompanyInfoForm.propTypes = {
+ContactInfoForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-CompanyInfoForm = reduxForm({
-  form: 'companyInfoForm',
+ContactInfoForm = reduxForm({
+  form: 'contactInfoForm',
   validate,
-})(CompanyInfoForm);
+})(ContactInfoForm);
 
-export default CompanyInfoForm;
+export default ContactInfoForm;
