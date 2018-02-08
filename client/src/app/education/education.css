@@ -13,7 +13,7 @@
 .z-depth-5 {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22); }
 
-.checklistItem:hover {
+.checklistItem:hover, .buttonTransition:hover {
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
 
 .checklistItem {
@@ -34,8 +34,28 @@
   margin: 0 0 10px 0;
   width: 100%;
   padding: 15px 0 0 0;
+  height: 100%;
+  opacity: 1;
   transition: all 0.5s ease-in-out; }
+
+.dropdownHide {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  width: 100%;
+  padding: 15px 0 0 0;
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden; }
 
 .checkedOff {
   opacity: 0.6;
   transition: all 0.5s ease-in-out; }
+
+.buttonTransition {
+  transition: all 0.2s ease-in-out; }
+
+.buttonTransition:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.05); }
