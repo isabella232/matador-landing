@@ -11,9 +11,13 @@ class SalesPage extends Component {
     super(props);
 
     this.state = {
-      toggleModal: false,
+      togglePayPoly: false,
     };
   }
+
+  handlePayPoly = () => {
+    this.setState({ togglePayPoly: true });
+  };
 
 
   // componentWillMount = () => {
@@ -110,7 +114,9 @@ class SalesPage extends Component {
         <br /><br />
         <div className="row">
           Please read the disclaimer before you can proceed to click PAY POLY.
-          <DialogModal />
+          </div>
+        <div>
+          <DialogModal handlePoly={this.handlePayPoly} />
         </div>
         <br />
 
@@ -120,7 +126,7 @@ class SalesPage extends Component {
           </span>
           <span />
           <span className="col d-flex justify-content-center" >
-            <RaisedButton className="z-depth-1 buttonTransition" primary label="Pay POLY" disabled />
+            <RaisedButton className="z-depth-1 buttonTransition" primary label="Pay POLY" disabled={!this.state.togglePayPoly} />
           </span>
         </div>
 
