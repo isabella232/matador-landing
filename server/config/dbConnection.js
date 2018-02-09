@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres', 'postgres', '', {
-    host: 'localhost',
+const sequelize = new Sequelize(process.env.AWS_RDS_DB_NAME, process.env.AWS_RDS_DB_USER, process.env.AWS_RDS_DB_PASS, {
+    host: process.env.AWS_RDS_DB_HOST,
     dialect: 'postgres',
 
     pool: {
