@@ -1,43 +1,59 @@
-const dynamoose = require('dynamoose');
-require('../config/dynamoose');
+const Sequelize = require('sequelize');
+const sequelize = require('../config/dbConnection');
 
-const Token = new dynamoose.Schema({
-  ticker: {
-    type: String,
-    required: true
-  },
-  supply: {
-    type: Number,
-    required: true
-  },
-  owner: {
-    type: String,
-    required: true
-  },
-  jurisdiction: {
-    type: String,
-    required: true
-  },
-  offeringType: {
-    type: String,
-    required: true
-  },
-  cap: {
-    type: Number,
-    required: true
-  },
-  quorum: {
-    type: Number,
-    required: true
-  },
-  startDate: {
-    type: Date,
-    required: true
-  },
-  endDate: {
-    type: Date,
-    required: true
-  }
+const Token = sequelize.define('token', {
+    ticker: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    supply: {
+        type: Sequelize.INTEGER,
+        required: true
+    },
+    owner: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    jurisdiction: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    offeringType: {
+        type: Sequelize.STRING
+    },
+    cap: {
+        type: Sequelize.INTEGER
+    },
+    quorum: {
+        type: Sequelize.INTEGER
+    },
+    startDate: {
+        type: Sequelize.DATEONLY
+    },
+    endDate: {
+        type: Sequelize.DATEONLY
+    }
+})
+
+// create the table with a dummy data
+Token.sync({force: true}).then(() => {
+   return Token.create({
+       ticker: 'JON',
+       supply: 10000000,
+       owner: 'John Doe',
+       jurisdiction: 'BBD',
+       offeringType: 'ASDF',
+       cap: 2000000,
+       quorum: 30000,
+       startDate: new Date(),
+       endDate: '2018-02-28'
+   });
 });
 
-module.exports = dynamoose.model('Token', Token);
+module.exports = Token;
+//
+// Token.findAll().then(tokens => {
+//     if (err) { console.log('fucking error')};
+//
+//     console.log(tokens);
+// })

@@ -1,23 +1,25 @@
 const router = require('express').Router();
-
 const Company = require('../models/Company');
 
 /* GET tokens listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     res.status(200).json('companies api');
 });
 
 /* POST new company */
-router.post('/', function(req, res, next) {
-  const newCompany = new Company(req.body);
-  newCompany.save(function(err) {
-    if(err) {
-      console.log(err);
-      res.status(401).send();
-      return;
-    }
-    res.status(201).send();
-  })
+router.post('/', function(req, res) {
+    return Company
+        .create(req.body)
+        .then(company => res.status(201).send(company))
+        .catch(error => res.status(401).send(error));
+});
+
+// PUT company
+router.put('/', function(req, res) {
+    return Company
+        .update(req.body.data)
+        .then(company => res.status(202).send(company))
+        .catch(error => res.status(422).send(error));
 });
 
 module.exports = router;

@@ -1,44 +1,53 @@
-const dynamoose = require('dynamoose');
-require('../config/dynamoose');
+const Sequelize = require('sequelize');
+const sequelize = require('../config/dbConnection');
 
-const Company = new dynamoose.Schema({
-  id: {
-    type: Number,
+const Company = sequelize.define('company', {
+    repName: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    repTitle: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    repEmail: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    repPhone: {
+        type: Sequelize.INTEGER,
+        required: true
+    },
+    companyName: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    entityType: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    address: {
+        type: Sequelize.STRING,
+        required: true
+    },
+    website: {
+        type: Sequelize.STRING,
+        required: true
+    }
+})
 
-  },
-  repName: {
-    type: String,  //Name of rep
-    required: true
-  },
-  repTitle: {
-    type: String, // Title of rep
-    required: true
-  },
-  repEmail: {
-    type: String, // Email of rep
-    required: true,
-    hashKey: true,
-  },
-  repPhone: {
-    type: Number,
-    required: true
-  },
-  companyName: {
-    type: String,
-    required: true
-  },
-  entityType: {
-    type: String,
-    required: true
-  },
-  address: {
-    type: String,
-    required: true
-  },
-  website: {
-    type: String,
-    required: true
-  }
+// create the table with a dummy data
+Company.sync({force: true}).then(() => {
+    return Company.create({
+        repName: 'Jane Doe',
+        repTitle: 'COO',
+        repEmail: 'user@email.com',
+        repPhone: 1420420420,
+        companyName: 'No Name',
+        entityType: 'Private',
+        address: '420 Hell Drive, Unknown, B5S S1T',
+        website: 'website.com'
+    });
 });
 
-module.exports = dynamoose.model('Company', Company);
+module.exports = Company;
