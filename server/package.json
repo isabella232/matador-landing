@@ -14,7 +14,10 @@
     "dynamoose": "^0.8.6",
     "express": "~4.15.5",
     "helmet": "^3.10.0",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.33.2"
   },
   "devDependencies": {
     "chai": "^4.1.2",
