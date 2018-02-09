@@ -167,7 +167,7 @@ class Education extends Component {
             <FlatButton href="/" label="Back" className='' />
           </span>
           <span className="z-depth-1 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2 buttonTransition" >
-            <FlatButton href="/tokenstudio" label="Continue" disabled={!this.props.EducationReducer.checklist6} />
+            <Link to='/tokenstudio' className={this.props.EducationReducer.checklist6 ? "" :'disabled-link'}><FlatButton label="Continue" /></Link>
           </span>
         </span>
 
