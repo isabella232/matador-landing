@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 // POST create tokens
 router.post('/', function(req, res, next) {
-  console.log(req.body)
+  console.log(req.body);
   const newToken = new Token(req.body);
   newToken.save(function(err) {
     if(err) {

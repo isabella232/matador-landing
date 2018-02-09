@@ -6,6 +6,9 @@ dynamoose.AWS.config.update({
     region: process.env.AWS_REGION
 });
 
-dynamoose.setDefaults({ create: true });
+dynamoose.setDefaults({
+    create: true,
+    update: false
+});
 
 module.exports = dynamoose;
