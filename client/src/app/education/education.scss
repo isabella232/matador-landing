@@ -58,3 +58,10 @@
   transform: scale(1.05);
 }
 
+.disabled-link {
+  pointer-events: none;
+}
+
+.btnwidth {
+  width: 150px;
+}
