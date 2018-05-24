@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>Matador Wizard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+  <link rel="apple-touch-icon" href="assets/ico/60.png">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+  <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/nvd3/nv.d3.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/mapplic/css/mapplic.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/rickshaw/rickshaw.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="assets/plugins/jquery-metrojs/MetroJs.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/css/pages-icons.css" rel="stylesheet" type="text/css">
+  <link class="main-stylesheet" href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body class="fixed-header dashboard" style='background-image: url("./assets/img/background-image.jpg");background-size: cover'>
+<!-- START PAGE-CONTAINER -->
+<div class="wizard-background">
+  <!-- START HEADER -->
+  <div class="header" style="background: linear-gradient(270deg, #09090A 0%, #DA2A19 100%);box-shadow: 0 4px 8px 0 rgba(42,63,125,0.3);">
+    <div class="">
+      <div class="brand inline" style="margin-left: 20px;">
+        <img src="assets/img/Logo.png" alt="logo" data-src="assets/img/Logo.png" data-src-retina="assets/img/Logo.png" width="211" height="30">
+      </div>
+    </div>
+    <div class="d-flex align-items-center">
+      <!-- START User Info-->
+      <div
+              class="user-info pull-left p-r-10 fs-14 font-heading d-lg-block d-none m-r-50"
+              style="color: white;font-size: 1.1em !important;font-family: Source Sans Pro;"
+      >
+        <span class="m-r-40">
+          <img class="m-r-10" src="./assets/img/Avatar.svg"/>
+          <span style="font-weight: 600" id="cur-network">Checking Network...</span>
+        </span>
+        <span class="m-r-40">
+          <img class="m-r-10" src="./assets/img/net.svg" />
+          <span style="font-weight: 600">Balance:</span>
+          <span id="cur-poly-balance"> Checking Poly Balance...</span>
+        </span>
+      </div>
+      <!-- END User Info-->
+    </div>
+  </div>
+  <!-- END HEADER -->
+  <!-- START PAGE CONTENT WRAPPER -->
+  <div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="content">
+      <!-- START CONTAINER FLUID -->
+      <div class="container-fluid padding-25 sm-padding-10">
+        <div class=" container-fluid   container-fixed-lg" style="margin-top: 10%">
+          <div id="rootwizard" class="m-t-50 m-l-40 m-r-40">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm d-flex justify-content-around" role="tablist" data-init-reponsive-tabs="dropdownfx">
+              <li class="nav-item">
+                <a class="active non-clickable" data-toggle="tab" href="#tab1" role="tab"><span>Introduction</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="non-clickable" data-toggle="tab" href="#tab2" role="tab"><span>Issuer Setup</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="non-clickable" data-toggle="tab" href="#tab3" role="tab"><span>Token Design Studio</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="non-clickable" data-toggle="tab" href="#tab4" role="tab"><span>Token Generation</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="non-clickable" data-toggle="tab" href="#tab5" role="tab"><span>Confirm</span></a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!--BEGIN TAB-->
+                <div class="tab-pane sm-no-padding active slide-left" id="tab1">
+                  <!--row-->
+                  <div class="row row-same-height">
+                    <!--col-->
+                    <div class="col-md-5 sm-b-b">
+                      <div class="padding-30 sm-padding-5 sm-m-t-15 m-t-50">
+                        <img width="100%" data-src="assets/img/Token0.png" class="brand" alt="logo" src="assets/img/Token0.png">
+                      </div>
+                    </div>
+                    <!--col-->
+                    <div class="col-md-7">
+                      <div class="padding-30 sm-padding-5">
+                        <h1 class="tab-title"><strong>Welcome to Matador's Token Design Studio!</strong></h1>
+                        <div>
+                          <h4 class="tab-sub-title"><strong>What is Polymath?</strong></h4>
+
+                          <p>Polymath makes it easy for companies to “tokenize” their assets.</p>
+
+                          <p>Right now, launching a security token is a really difficult process.</p>
+
+                          <p>Issuers need to make sure they have legitimate investors on board. They need to know who their investors are. They need to make sure they’re verified. They need to make sure they’re trading to the right people.</p>
+
+                          <p>That verification process can be slow, and incredibly expensive.</p>
+
+                          <p>Polymath bakes KYC *directly into* the tokens.</p>
+
+                          <p>This way, the token “knows” who’s trading it. It “knows” where it’s going.</p>
+
+                          <p>There’s no need to “verify” investors because the token regulates itself. It automatically restricts token holders from trading to anyone who’s not verified -- saving issuers a lot of time, money, and headaches.</p>
+
+                          <h4 class="tab-sub-title"><strong>Who is this wizard for?</strong></h4>
+
+                          <p>This wizard is for security token issuers who want to create their tokens through the Polymath platform.</p>
+
+                          <p>As you’ll soon find out... the easiest, fastest, most cost-effective way to launch a security token is by going through the Polymath platform.</p>
+
+                          <p>In this wizard, we’ll take you through the process of designing your token, adding features to it, and creating it from scratch in a matter of a few clicks — even if you’ve never written a line of code in your life.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--BEGIN TAB-->
+                <div class="tab-pane slide-left sm-no-padding" id="tab2">
+                  <div class="row row-same-height">
+                    <div class="col-md-5">
+                      <div class="padding-30 sm-padding-5 sm-m-t-15 m-t-50">
+                        <img width="100%" data-src="assets/img/Token1.png" class="brand" alt="logo" src="assets/img/Token1.png">
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="padding-30 sm-padding-5">
+                        <form id="tab2-form" role="form">
+                          <h4 class="tab-title"><strong>Business Info</strong></h4>
+                          <div class="form-group-attached">
+                            <div class="row clearfix">
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>Legal Name</label>
+                                  <input id="input-legal-name" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>Entity Jurisdiction<span>(City, State, Country)</span></label>
+                                  <input id="input-equity-jurisdiction" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 form-group form-group-default required">
+                              <label>Brief Description of Business/Company</label>
+                              <input id="input-description" type="text" class="form-control" required>
+                            </div>
+                            <div class="col-sm-12 form-group form-group-default required">
+                              <label>Website</label>
+                              <input id="input-website" type="text" class="form-control" required>
+                            </div>
+                          </div>
+                          <br>
+                          <h4 class="tab-title"><strong>Contact Info</strong></h4>
+                          <div class="form-group-attached">
+                            <div class="row clearfix">
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>TITLE</label>
+                                  <input id="input-title" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>CONTACT PERSON</label>
+                                  <input id="input-contact-person"type="text" class="form-control" required>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row clearfix">
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>PHONE NUMBER</label>
+                                  <input id="input-phone-number" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>EMAIL</label>
+                                  <input id="input-email" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--BEGIN TAB-->
+                <div class="tab-pane slide-left sm-no-padding" id="tab3">
+                  <div class="row row-same-height">
+                    <div class="col-md-5">
+                      <div class="padding-30 sm-padding-5 sm-m-t-15 m-t-50">
+                        <img width="100%" data-src="assets/img/Token2.png" class="brand" alt="logo" src="assets/img/Token2.png">
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="padding-30 sm-padding-5">
+                        <form id="tab3-form" role="form">
+                          <h4 class="tab-title"><strong>Proposed ST-20</strong></h4>
+                          <div class="form-group-attached">
+                            <div class="row clearfix">
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label class="desired-symbol">Desired Ticker Symbol <span>(Disclaimer - this is not guaranteed, will depend on availability)</span></label>
+                                  <input id="input-ticker" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>Total issuable security tokens in this token class <span>(Default: 1 Billion)</span></label>
+                                  <input id="total-supply" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row clearfix">
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label class="desired-symbol">Type <span>(Real estate, venture firm, etc.)</span></label>
+                                  <input id="input-desired-symbol" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="form-group form-group-default required">
+                                  <label>Owner Ethereum Address <span>(Default: Metamask)</span></label>
+                                  <input id="owner-address" type="text" class="form-control" required>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 form-group form-group-default required">
+                              <label>Token name <span>(e.g. Acme Company utility token)</span></label>
+                              <input id="input-token-name" type="text" class="form-control" required>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--BEGIN TAB-->
+                <div class="tab-pane slide-left sm-no-padding" id="tab4">
+                  <div class="row row-same-height">
+                    <div class="col-md-5">
+                      <div class="padding-30 sm-padding-5 sm-m-t-15 m-t-50">
+                        <img width="100%" data-src="assets/img/Token3.png" class="brand" alt="logo" src="assets/img/Token3.png">
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="padding-30 sm-padding-5">
+                        <h1 class="tab-title">With Matador You Will Get The Following:</h1>
+                        <table class="table table-condensed">
+                          <tr>
+                            <td class="col-lg-8 col-md-6 col-sm-7" style="overflow: visible !important;">
+                              <img width="10%" data-src-retina="assets/img/Internet.png" data-src="assets/img/Internet.png" class="brand" alt="logo" src="assets/img/black-bull.png">
+                              <span class="m-l-10 font-montserrat fs-11"><strong>Tokens.com/companyname</strong></span>
+                            </td>
+                            <td class=" col-lg-2 col-md-3 col-sm-2 text-right">
+                              <h4 class="no-margin font-montserrat" style="color: #DA2A19">FREE</h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="col-lg-8 col-md-6 col-sm-7" style="overflow: visible !important;">
+                              <img width="10%" data-src-retina="assets/img/Contracts.png" data-src="assets/img/Contracts.png" class="brand" alt="logo" src="assets/img/black-bull.png">
+                              <span class="m-l-10 font-montserrat fs-11"><strong>High Value Introductions</strong></span>
+                            </td>
+                            <td class=" col-lg-2 col-md-3 col-sm-2 text-right">
+                              <h4 class="no-margin font-montserrat" style="color: #DA2A19">FREE</h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="col-lg-8 col-md-6 col-sm-7" style="overflow: visible !important;">
+                              <img width="10%" data-src-retina="assets/img/Coin.png" data-src="assets/img/Coin.png" class="brand" alt="logo" src="assets/img/black-bull.png">
+                              <span class="m-l-10 font-montserrat fs-11"><strong>Your Security Token</strong></span>
+                            </td>
+                            <td class=" col-lg-2 col-md-3 col-sm-2 text-right">
+                              <h4 class="no-margin font-montserrat" style="color: #DA2A19">FREE</h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="col-lg-8 col-md-6 col-sm-7" style="overflow: visible !important;">
+                              <img width="10%" data-src-retina="assets/img/Checkmark.png" data-src="assets/img/Checkmark.png" class="brand" alt="logo" src="assets/img/black-bull.png">
+                              <span class="m-l-10 font-montserrat fs-11" style="overflow: auto"><strong>100% Money Back Guarantee</strong></span>
+                            </td>
+                            <td class=" col-lg-2 col-md-3 col-sm-2 text-right" style="width: 20%">
+                              <h4 class="no-margin font-montserrat" style="color: #DA2A19">10,000 POLY</h4>
+                            </td>
+                          </tr>
+                            <tr>
+                            <td class="col-lg-11 col-md-11 col-sm-11">
+                              <div class="checkbox check-danger checkbox-circle">
+                                <input type="checkbox" value="1" id="checkbox">
+                                <label for="checkbox" style="overflow: visible !important;">I agree to the <a data-toggle="modal" data-target="#tab4-modal-tc" style="text-decoration: underline">Terms and Conditions</a></label>
+                              </div>
+                            </td>
+                            <td class="col-lg-1 col-md-1 col-sm-1 text-right" style="color:white; overflow: visible !important;">
+                              <div style="margin-left: auto;width: 60%; background-color: #DA2A19;padding: 10px">
+                                <p>TOTAL</p>
+                                <h4 class="no-margin font-montserrat" style="color: white; overflow: visible !important;">10,000 POLY</h4>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--BEGIN TAB-->
+                <div class="tab-pane slide-left padding-20 sm-no-padding" id="tab5">
+                <div class="row row-same-height">
+                  <div class="col">
+                    <div class="d-flex justify-content-center">
+                      <h1 class="congrats-title">CONGRATULATIONS!</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="row row-same-height">
+                  <div class="col">
+                    <div class=" d-flex justify-content-center">
+                      <img width="35%" height="35%" data-src="assets/img/Token4.png" class="brand" alt="logo" src="assets/img/Token4.png">
+                    </div>
+                  </div>
+                </div>
+                <div class="row row-same-height">
+                  <div class="col d-flex justify-content-center">
+                    <div class="padding-30 sm-padding-5 final-step-message">
+                      You have completed the Matador Token Design Studio! You are one step closer to having your very own security token. Yes, that really is how simple it can be to design a financial security.
+                      space
+                      Click “Learn More” to learn more about Matador, our process, and what we’re building, or click “Go to Dashboard” to return to the dashboard.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END TAB-->
+            <!--BUTTONS-->
+            <div class="padding-20 sm-padding-5 sm-m-b-20 sm-m-t-20 bg-white clearfix">
+              <ul class="pager wizard no-style">
+                <li class="start" data-toggle="modal" data-target="#tab1-modal">
+                  <button class="btn btn-danger btn-cons from-left pull-right" type="button">
+                    <span>Get Started</span>
+                  </button>
+                </li>
+                <li class="next" style="display:none;">
+                  <button id="nextbtm" class="btn btn-danger btn-cons from-left pull-right" type="button">
+                    Next
+                  </button>
+                </li>
+                <li class="learn-more" style="display:none;">
+                  <button class="btn btn-danger btn-cons from-left pull-right" type="button">
+                    <span>Go to Dashboard</span>
+                  </button>
+                </li>
+                <li class="create-token-btn" style="display:none;">
+                  <button class="btn btn-danger btn-cons from-left pull-right" id="create-token-btn"  type="button">
+                    <span>Create My Token</span>
+                  </button>
+                </li>
+                <li class="previous" style="display:none;">
+                  <button class="btn btn-danger btn-cons pull-right" type="button">
+                    <span>Previous</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END CONTAINER FLUID -->
+    </div>
+    <!-- END CONTAINER FLUID -->
+  </div>
+  <!-- END PAGE CONTENT -->
+</div>
+<!-- TAB 1 Modal -->
+<div class="modal fade slide-up disable-scroll" id="tab1-modal" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+  <div class="modal-dialog ">
+    <div class="modal-content-wrapper">
+      <div class="modal-content">
+        <div class="modal-header clearfix text-left">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="pg-close fs-14"></i>
+          </button>
+          <h5><strong>Disclaimer</strong></h5>
+        </div>
+        <div class="modal-body">
+          <p>By clicking “I Agree”, you acknowledge that you are liable for any security tokens that you create using the Matador Token Design Studio. Matador Advisory Inc. and its related parties are not financial advisors, broker dealers, or licensed exchanges. Blockchain technology is still very experimental and new, and mistakes happen. By proceeding, you are willing to undertake these and other risks and accept that Matador is not liable and cannot assist you in any way.</p>
+        </div>
+        <button id="tab1-modal-button" data-dismiss="modal" style="width:10%;margin-left: auto;margin-right: 5%;margin-bottom: 5%" class="btn btn-danger btn-cons pull-right" type="button">
+          <span>I Agree</span>
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
+<!--MODAL END-->
+<!-- TAB 4 Modal -->
+<div class="modal fade slide-up disable-scroll" id="tab4-modal-tc" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+  <div class="modal-dialog ">
+    <div class="modal-content-wrapper">
+      <div class="modal-content">
+        <div class="modal-header clearfix text-left">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="pg-close fs-14"></i>
+          </button>
+          <h5><strong>Terms and Conditions</strong></h5>
+        </div>
+        <div class="modal-body">
+          1. YOUR AGREEMENT
+          <p>By using this Site, you agree to be bound by, and to comply with, these Terms and Conditions. If you do not agree to these Terms and Conditions, please do not use this site.</p>
+          <p>PLEASE NOTE: We reserve the right at our sole discretion, to change, modify or otherwise alter these Terms and Conditions at any time. Unless otherwise indicated, amendments will become ffective immediately. Please review these Terms and Conditions periodically. Your continued use of the Site following the posting of</p>
+        </div>
+        <button id="tab4-modal-tc-button" data-dismiss="modal" style="width:10%;margin-left: auto;margin-right: 5%;margin-bottom: 5%" class="btn btn-danger btn-cons pull-right" type="button">
+          <span>OK</span>
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
+<!--MODAL END-->
+<!-- TAB 4 Modal -->
+<div class="modal fade slide-up disable-scroll" id="tab4-modal-continue" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+  <div class="modal-dialog ">
+    <div class="modal-content-wrapper">
+      <div class="modal-content">
+        <div class="modal-header clearfix text-left">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="pg-close fs-14"></i>
+          </button>
+          <h5><strong>Continue</strong></h5>
+        </div>
+        <div class="modal-body">
+          <p>This is your final warning. By continuing, you acknowledge that you are the liable party in creating this security token.</p>
+          <p>Matador is simply an interface that makes it easier for you to create your own security token, and cannot be held accountable for any bugs, glitches, lost funds, and/or hurt feelings that may arise from the creation of this security.</p>
+          <p>In the world of crypto, there are many hackers, thieves, and scam artists. If you lose your funds or investor/customer/client funds, there is no way that Matador can assist you in retrieving your funds. Matador is not a broker-dealer, an investment bank, or a commercial bank.</p>
+          <p>If you are comfortable with these risks, and are still committed to blazing a trail in the world of capital markets and blockchain technology, please click "Next".</p>
+        </div>
+        <button id="tab4-modal-continue-button" data-dismiss="modal" style="width:10%;margin-left: auto;margin-right: 5%;margin-bottom: 5%" class="btn btn-danger btn-cons pull-right" type="button">
+          <span>OK</span>
+        </button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
+<!--MODAL END-->
+<!-- TAB 4 Modal -->
+<div class="modal fade slide-up disable-scroll" id="loader" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+  <div class="modal-dialog ">
+    <div class="modal-content-wrapper">
+      <div class="modal-content" style="border:0px solid black !important">
+        <img width="100%" src="assets/img/loader.gif" alt="LOADING...">
+        <span class="loading-text">Approving Matador to spend Poly!</span>
+        <span class="loading-tx"></span>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
+<!--MODAL END-->
+<!-- END PAGE CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- BEGIN VENDOR JS -->
+<script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/plugins/popper/umd/popper.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+<script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script type="text/javascript" src="assets/plugins/select2/js/select2.full.min.js"></script>
+<script type="text/javascript" src="assets/plugins/classie/classie.js"></script>
+<script src="assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/lib/d3.v3.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/nv.d3.min.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/src/utils.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/src/tooltip.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/src/interactiveLayer.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/src/models/axis.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/src/models/line.js" type="text/javascript"></script>
+<script src="assets/plugins/nvd3/src/models/lineWithFocusChart.js" type="text/javascript"></script>
+<script src="assets/plugins/mapplic/js/hammer.js"></script>
+<script src="assets/plugins/mapplic/js/jquery.mousewheel.js"></script>
+<script src="assets/plugins/mapplic/js/mapplic.js"></script>
+<script src="assets/plugins/rickshaw/rickshaw.min.js"></script>
+<script src="assets/plugins/jquery-metrojs/MetroJs.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="assets/plugins/skycons/skycons.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-form-wizard/js/jquery.bootstrap.wizard.min.js" type="text/javascript"ß></script>
+
+<!-- END VENDOR JS -->
+<!-- BEGIN CORE TEMPLATE JS -->
+<script src="assets/js/pages.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/token.js"></script>
+<!-- END CORE TEMPLATE JS -->
+</body>
+</html>

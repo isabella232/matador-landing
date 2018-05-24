@@ -1,0 +1,1042 @@
+/* ========================================================================== *\
+   RESET
+\* ========================================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* Make HTML 5 elements display block-level for consistent styling */
+article, section, aside, hgroup, nav, header, footer, figure, figcaption {
+  display: block;
+}
+
+/* ========================================================================== *\
+   FONTS
+\* ========================================================================== */
+
+@font-face {
+  font-family: 'NHaasGroteskTXPro-65Md';
+  src: url('../fonts/NHaasGroteskTXPro-65Md.eot');
+  src: url('../fonts/NHaasGroteskTXPro-65Md.woff2') format('woff2'),
+       url('../fonts/NHaasGroteskTXPro-65Md.woff') format('woff'),
+       url('../fonts/NHaasGroteskTXPro-65Md.ttf') format('truetype'),
+       url('../fonts/NHaasGroteskTXPro-65Md.svg#NHaasGroteskTXPro-65Md') format('svg'),
+       url('../fonts/NHaasGroteskTXPro-65Md.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: 'NHaasGroteskTXPro-55Rg';
+  src: url('../fonts/NHaasGroteskTXPro-55Rg.eot');
+  src: url('../fonts/NHaasGroteskTXPro-55Rg.woff2') format('woff2'),
+       url('../fonts/NHaasGroteskTXPro-55Rg.woff') format('woff'),
+       url('../fonts/NHaasGroteskTXPro-55Rg.ttf') format('truetype'),
+       url('../fonts/NHaasGroteskTXPro-55Rg.svg#NHaasGroteskTXPro-55Rg') format('svg'),
+       url('../fonts/NHaasGroteskTXPro-55Rg.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}  
+
+@font-face {
+  font-family: 'NHaasGroteskTXPro-75Bd';
+  src: url('../fonts/NHaasGroteskTXPro-75Bd.eot');
+  src: url('../fonts/NHaasGroteskTXPro-75Bd.woff2') format('woff2'),
+       url('../fonts/NHaasGroteskTXPro-75Bd.woff') format('woff'),
+       url('../fonts/NHaasGroteskTXPro-75Bd.ttf') format('truetype'),
+       url('../fonts/NHaasGroteskTXPro-75Bd.svg#NHaasGroteskTXPro-75Bd') format('svg'),
+       url('../fonts/NHaasGroteskTXPro-75Bd.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot';
+  src: url('../fonts/Didot.eot');
+  src: url('../fonts/Didot.woff2') format('woff2'),
+       url('../fonts/Didot.woff') format('woff'),
+       url('../fonts/Didot.ttf') format('truetype'),
+       url('../fonts/Didot.svg#Didot') format('svg'),
+       url('../fonts/Didot.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========================================================================== *\
+   GENERAL TAGS
+\* ========================================================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 14px;
+	line-height: 24px;
+	font-family: 'NHaasGroteskTXPro-55Rg';
+}
+
+p {
+    padding-bottom:20px;
+}
+
+h1 {
+	font-size: 72px;
+	line-height: 72px;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-family: 'Didot';
+}
+
+h2 {
+	font-size: 48px;
+	line-height: 48px;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-family: 'Didot';
+}
+
+h3 {
+	font-size: 46px;
+	line-height: 48px;
+	margin-bottom: 45px;
+	font-family: 'Didot';
+}
+
+h4 {
+	font-size: 36px;
+	margin-bottom: 60px;
+	text-transform: uppercase;
+	color: #C51718;
+	font-family: 'Didot';
+}
+
+h5 {
+	display: block;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: 'NHaasGroteskTXPro-65Md';
+}
+
+a {
+	color: #C51718;
+	text-decoration: none;  
+    transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+}
+
+a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+hr {
+
+}
+
+blockquote {
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 70px 30px 25px 40px;
+	background: url('../images/quote-open.svg');
+	background-position:left top 65px;
+	background-repeat: no-repeat;
+}
+
+blockquote:after {
+	display: inline-block;
+	content: "";
+	width: 28px;
+	height: 18px;
+	margin: 0 0 -10px 10px;
+	background: url('../images/quote-close.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.indent {
+	padding-left: 40px;
+}
+
+::selection {
+	background: #C51718;
+	color: #ffffff;
+}
+
+::-moz-selection {
+	background: #C51718;
+	color: #ffffff;
+}
+
+/* ========================================================================== *\
+   STRUCTURE
+\* ========================================================================== */
+
+#header {
+	display: block;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999999;
+	padding: 30px 0;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+#header.nav-up {
+    top: -100px;
+}
+
+#header.solid {
+	background: #ffffff;	
+}
+
+#header.solid.transparent {
+	background: transparent;
+}
+
+#logo {
+	display: block;
+	float: left;
+	width: 165px;
+	margin-top: 5px;
+}
+
+#logoAlt {
+	display: none;
+	float: left;
+	width: 165px;
+	margin-top: 5px;
+}
+
+/* ========================================================================== *\
+   MENU
+\* ========================================================================== */
+
+.c-hamburger {
+	display: none;
+	position: absolute;
+	z-index: 9999999;
+	top: 30px;
+	right: 40px;
+	margin: 0;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	border: none;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+	outline: none;
+}
+
+.c-hamburger span {
+	display: block;
+	position: absolute;
+	top: 6px;
+	left: 0px;
+	right: 0px;
+	height: 2px;
+	background: #C51718;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+	position: absolute;
+	display: block;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #C51718;
+	content: "";
+}
+
+.c-hamburger span::before {
+	top: -6px;
+}
+
+.c-hamburger span::after {
+	bottom: -6px;
+}
+
+.c-hamburger--htx {
+	background:transparent;
+}
+
+.c-hamburger--htx span {
+	transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+	transition-duration: 0.3s, 0.3s;
+	transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+	transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+	transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+	background: transparent;
+}
+
+.c-hamburger--htx.is-active span {
+	background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+	top: 0;
+	transform: rotate(45deg);
+	background: #ffffff;
+}
+
+.c-hamburger--htx.is-active span::after {
+	bottom: 0;
+	transform: rotate(-45deg);
+	background: #ffffff;
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+	transition-delay: 0s, 0.3s;
+}
+
+#overlay {
+	min-height: 400px;
+	display: none;
+	position: fixed;
+	overflow-y: scroll;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+}
+
+#overlay ul {
+	display: inline-block;
+	text-align: center;
+	margin: 100px auto 80px auto;
+}
+
+#overlay ul li {
+	display: block;
+	margin-bottom: 25px;
+}
+
+#overlay ul li a {
+	font-size: 16px;
+	line-height: 16px;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	font-family: 'Didot';
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+#overlay ul li a:hover {
+	color: #C51718;
+}
+
+#overlay ul li.token a {
+	background-color: #C51718;
+	color: #ffffff;
+}
+
+#overlay ul li.token a:hover {
+	color: #ffffff;
+	background-color: #000000;	
+}
+
+nav#menu {
+	display: block;
+	float: right;
+	font-family: "Didot";
+}
+
+nav#menu ul {
+	display: block;
+}
+
+nav#menu ul li {
+	display: block;
+	float: left;
+	margin-left: 25px;
+}
+	
+nav#menu ul li a {
+	display: block;
+	color: #454341;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 10px 15px;
+	text-decoration: none;
+}
+
+nav#menu ul li a:hover, nav#menu ul li.active a {
+	color: #C51718;
+	text-decoration: none;
+}
+
+nav#menu ul li.token a {
+	color: #ffffff;
+	background-color: #C51718;
+}
+
+nav#menu ul li.token a:hover {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+#hero, #vision, #services, #value, #careers {
+	display: block;
+	min-height: 800px;
+}
+
+#footer {
+	letter-spacing: 0.5px;
+	padding: 70px 0;
+	background-color: #B4252B;
+	color: #ffffff;
+}
+
+#footerLogo {
+	display: block;
+	width: 165px;
+	margin-top: 10px;
+}
+
+.legal {
+	padding: 10px 0;
+}
+
+#footer a {
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+#footer a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/* ========================================================================== *\
+   HERO & CAREERS
+\* ========================================================================== */
+
+#hero {
+	height: 100%;
+	background:url('../images/hero.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-color: #F6F1EC;
+}
+
+#careers {
+	height: 100%;
+	background-color: #F6F1EC;
+}
+
+#careers .content {
+	height: 100%;
+}
+
+#careers .content h3 {
+	font-size: 30px;
+	line-height: 35px;
+}
+
+#careers .content p {
+	font-size: 20px;
+}
+
+#intro {
+	display: inline-block;
+	padding: 80px 80px 30px 80px;
+	background: rgba(255,255,255,0.94);
+}
+
+#intro h4 {
+	font-size: 30px;
+	line-height: 35px;
+}
+
+#intro h4:before {
+	content: "\2013";
+	display: inline-block;
+	margin-right: 20px;	
+}
+
+#intro h4:after {
+	content: "\2013";
+	display: inline-block;
+	margin-left: 20px;	
+}
+
+#more {
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	bottom: 65px;
+	left: 50%;
+	margin-left: -30px;
+	animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	-moz-animation: bounce 2s infinite;
+	animation-name: bounce;
+	-o-animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+	40% {-webkit-transform: translateY(-30px);}
+	60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-30px);}
+	60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-30px);}
+	60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+/* ========================================================================== *\
+   VISION
+\* ========================================================================== */
+		
+#vision {
+	background-color: #454341;
+	color: #ffffff;
+	overflow: hidden;
+}
+
+#vision .copy {
+	display: block;
+	padding: 80px 200px 100px 0;
+	width: 940px;
+	float: right;
+}
+
+#vision .content {
+	min-height: 800px;
+}
+
+#building {
+	width: 886px;
+	height: 940px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+/* ========================================================================== *\
+   SERVICES
+\* ========================================================================== */
+
+#services {
+	background-color: #F6F1EC;
+	padding-bottom: 90px;
+	overflow:hidden;
+}
+
+#services .top {
+	width: 1144px;
+	margin: 0 auto 90px auto;	
+	padding: 160px 0 0 50px;
+}
+
+.bar {
+	display: block;
+	width: 10px;
+	height: 475px;
+	background-color: #C51718;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#services .top h3 {
+	margin-bottom: 0px;
+}
+
+h5.binary:before {
+	content: "";
+	background: url('../images/binary.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: -10px 15px 25px 0;
+}
+
+h5.advice:before {
+	content: "";
+	background: url('../images/advice.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: -15px 15px 30px 0;
+}
+
+h5.handshake:before {
+	content: "";
+	background: url('../images/handshake.svg');
+	background-position:center top 10px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: -15px 15px 30px 0;
+}
+
+h5.gears:before {
+	content: "";
+	background: url('../images/gears.svg');
+	background-position:center center;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: -15px 15px 30px 0;
+}
+
+.globeWrap {
+	display: block;
+	width: 300px;
+	height: 300px;
+	margin: 0px auto 0 auto;
+}
+
+#dollar {
+	display: block;
+	width: 130px;
+	height: 120px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -60px 0 0 -65px;
+	z-index: 5;
+}
+
+.globe {
+	display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.circle {
+    position: absolute;
+    width: 100%;    
+    height: 100%;
+    border: 6px solid #ffffff;
+    border-radius: 50%;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0);
+}
+
+.zero {
+    -webkit-transform: rotateX(90deg);
+}
+
+.two {
+    -webkit-transform: rotateY(45deg);
+}
+
+.three {
+    -webkit-transform: rotateY(90deg);
+}
+
+.four {
+    -webkit-transform: rotateY(135deg);
+}
+
+.five {
+    width: 273px;
+    height: 273px;
+    margin: 14px;
+    -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+
+.six {
+    width: 273px;
+    height: 273px;
+    margin: 14px;
+    -webkit-transform: rotateX(90deg) translateZ(-50px);
+}
+
+@-webkit-keyframes spin{
+    0% { -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
+    50% { -webkit-transform: rotateY(-180deg) rotateX(0deg) rotateZ(-180deg); }
+    100% { -webkit-transform: rotateY(-360deg) rotateX(0deg) rotateZ(-360deg); }
+}
+
+/* ========================================================================== *\
+   VALUE
+\* ========================================================================== */
+
+#value {
+	background-color: #000000;
+	color: #ffffff;
+	overflow: hidden;
+}
+
+#value .copy {
+	display: block;
+	padding: 170px 80px 170px 0;
+	width: 700px;
+	float: right;
+	z-index: 10;
+	position: relative;
+}
+
+#monogram {
+	display: block;
+	width: 245px;
+	position: absolute;
+	top: 240px;
+	left: 260px;
+	z-index: 5;
+}
+
+#grid {
+	display: block;
+	width: 1100px;
+	height: 1100px;
+	position: absolute;
+	top: -180px;
+	left: -160px;
+	z-index: 1;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 200s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+		
+/* ========================================================================== *\
+   CLIENTS
+\* ========================================================================== */
+
+#clients {
+	background-color: #FFFFFF;
+	padding: 125px 0;
+}
+		
+/* ========================================================================== *\
+   CAREERS
+\* ========================================================================== */
+
+#careers {
+	
+}
+
+/* ========================================================================== *\
+   GENERAL CLASSES
+\* ========================================================================== */
+
+.wow {
+	visibility: hidden;
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+.clear {
+    clear:both;
+}
+
+.clearboth.buffer, .clear.buffer {
+	height: 40px;	
+}
+
+.clearboth.buffer.short, .clear.buffer.short {
+	height: 20px;	
+}
+
+.content {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.wide {
+	width: 1440px;
+}
+
+.narrow {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.center {
+	text-align: center;
+}
+
+.middle {
+	width: 100%;
+	transition: .5s ease;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.right {
+	float: right;
+}
+
+.relative {
+	position: relative;
+}
+
+.btn {
+	display: inline-block;
+	color: #ffffff;
+	background-color: #C51718;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 15px 25px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	font-family: 'Didot';
+}
+
+.btn:hover {
+	color: #ffffff;
+	background-color: #000000;
+	transform: scale(1.1,1.1);
+}
+
+/* ========================================================================== *\
+   FORM STYLES
+\* ========================================================================== */
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+/* ========================================================================== *\
+   ALIGNMENT
+\* ========================================================================== */
+
+.alignleft {
+	float:left;
+	display:block;
+	margin:0 15px 15px 0;
+}
+
+.alignright {
+	float:right;
+	display:block;
+	margin:10px 0px 0px 15px;
+}
+
+.aligncenter {
+	display:block;
+	margin:0px auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 11px;
+	line-height: 17px;	
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px !important;
+	line-height: 17px;
+	padding: 5px 10px;
+	margin: 0;
+}
+
+
+/* ========================================================================== *\
+   COLUMNS
+\* ========================================================================== */
+
+.one_half { 
+	width:48%; 
+}
+
+.one_third { 
+	width:30.66%; 
+}
+
+.two_third { 
+	width:65.33%; 
+}
+
+.one_fourth { 
+	width:22%; 
+}
+
+.three_fourth{ 
+	width:74%; 
+}
+
+.one_fifth { 
+	width:16.8%; 
+}
+
+.two_fifth{ 
+	width:37.6%; 
+}
+
+.three_fifth { 
+	width:58.4%; 
+}
+
+.four_fifth { 
+	width:67.2%; 
+}
+
+.one_sixth { 
+	width:13.33%; 
+}
+
+.five_sixth { 
+	width:82.67%; 
+}
+
+.one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth{ 
+	margin-right:4%; 
+	float:left; 
+	position:relative;
+}
+
+.last{ 
+	margin-right:0 !important; 
+	clear:right; 
+}
+
+.clearboth {
+	clear:both;
+	display:block;
+	font-size:0;
+	height:0;
+	line-height:0;
+	width:100%;
+}

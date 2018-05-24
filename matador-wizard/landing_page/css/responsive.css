@@ -1,0 +1,433 @@
+/* ========================================================================== *\
+   IMAGE RESIZE
+\* ========================================================================== */
+
+img{max-width: 100%; height: auto !important;}
+img{ -ms-interpolation-mode: bicubic; }
+
+
+/* ========================================================================== *\
+   PHONE WIDTH
+\* ========================================================================== */
+
+@media screen and (max-width:600px) {
+
+.content, .wide, .narrow {
+		width: auto;
+		padding: 0 20px;
+	}
+
+	h1 {
+		font-size: 40px;
+		line-height: 40px;
+	}
+	
+	h2 {
+		font-size: 35px;
+		line-height: 35px;
+		margin-bottom: 30px;
+	}
+	
+	h3 {
+		font-size: 30px;
+		line-height: 35px;
+		margin-bottom: 30px;
+	}
+	
+	h4 {
+		font-size: 34px;
+		margin-bottom: 50px;
+	}
+	
+	#header {
+		padding: 20px 0;
+	}
+	
+	#header.nav-up {
+	    top: -100px;
+	}
+	
+	#logo {
+		float: left;
+		width: 165px;
+		margin-top: 5px;
+	}
+	
+	.c-hamburger {
+		display: block;
+		right: 20px;
+	}
+	
+	nav#menu {
+		display: none;
+	}
+			
+	#hero {
+		min-height: 0px;
+		height: 100%;
+		background-image: none;
+	}
+	
+	#careers {
+		padding: 0 20px;
+	}
+	
+	#careers .content h3 {
+		font-size: 20px;
+		line-height: 25px;
+	}
+	
+	#careers .content p {
+		font-size: 16px;
+	}
+	
+	#footer {
+		padding: 50px 0 20px 0;
+		text-align: center;
+	}
+	
+	#footerLogo {
+		width: auto;
+		margin: 0px auto;
+	}
+	
+	.right {
+		float: none;
+	}
+	
+	.legal {
+		padding: 10px 0;
+	}
+	
+	#intro {
+		padding: 40px 20px 10px 20px;
+	}
+
+	#intro h4 {
+		font-size: 20px;
+		line-height: 25px;
+	}
+	
+	#intro h4:before {
+		display: none;
+	}
+	
+	#intro h4:after {
+		display: none;
+	}	
+	
+	#more {
+		bottom: 20px;
+	}
+	
+	#vision .copy {
+		padding: 80px 20px 60px 0px;
+		width: auto;
+		height: auto;
+		float: none;
+		z-index: 10;
+		position: static;
+		text-align: center;
+	}
+	
+	#vision .content {
+		height: 100%;
+		min-height: 0px;
+	}
+	
+	#building {
+		display: none;
+	}
+		
+	#services {
+		padding-bottom: 90px;
+	}
+	
+	#services .top {
+		width: auto;
+		margin: 0 auto 90px auto;	
+		padding: 80px 0 0 50px;
+	}
+	
+	#services .top .three_fifth {
+		width: 100%;
+		clear: both;
+		margin: 0;
+		padding: 0 40px 0px 0;
+	}
+	
+	#services .top .two_fifth {
+		width: 100%;
+		height: 280px;
+		clear: both;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.globeWrap {
+		position: absolute;
+		top: 50px;
+		left: 0px;
+		width: 250px;
+	}
+	
+	#dollar {
+		display: block;
+		width: 100px;
+		height: 92px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -65px 0 0 -50px;
+		z-index: 5;
+	}
+
+	.globe {
+	    width: 250px;
+	    height: 250px;
+	}
+	
+	.five {
+	    width: 223px;
+	    height: 223px;
+	    margin: 14px;
+	}
+	
+	.six {
+	    width: 223px;
+	    height: 223px;
+	    margin: 14px;
+	}	
+	
+	.bar {
+		height: 450px;
+	}
+		
+	#value {
+		min-height: 0;
+	}
+	
+	#value .copy {
+		padding: 80px 0;
+		width: auto;
+		float: none;
+	}
+	
+	#monogram {
+		display: none;
+	}
+	
+	#grid {
+		top: -100px;
+		left: inherit;
+		right: -50px;
+	}
+	
+	#clients {
+		padding: 80px 0;
+	}
+	
+	#clients img {
+		display: block;
+		max-width: 200px;
+		margin: 0 auto;
+	}
+	
+	.clearboth.buffer, .clearboth.buffer.short, .clear.buffer.short {
+		height: 0px;
+	}
+
+	.one_half, .one_third, .two_third, .one_fourth, .three_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .five_sixth { 
+		width:auto; 
+		margin-right:0px; 
+		float:none; 
+		clear: both;
+		margin-bottom:20px;
+	}
+	
+	.last{ 
+		margin-right:0 !important; 
+		clear:both; 
+	}
+	
+}
+
+/* ========================================================================== *\
+   TABLET WIDTH
+\* ========================================================================== */
+
+@media screen and (min-width:601px) and (max-width:1024px) {
+
+	.content, .wide, .narrow {
+		width: auto;
+		padding: 0 40px;
+	}
+
+	h1 {
+		font-size: 40px;
+		line-height: 40px;
+	}
+	
+	h2 {
+		font-size: 46px;
+		line-height: 46px;
+		margin-bottom: 30px;
+	}
+	
+	h3 {
+		font-size: 43px;
+		line-height: 46px;
+		margin-bottom: 40px;
+	}
+	
+	h4 {
+		font-size: 34px;
+		margin-bottom: 50px;
+	}
+	
+	#header {
+		padding: 20px 0;
+	}
+	
+	#header.nav-up {
+	    top: -100px;
+	}
+	
+	#logo {
+		float: left;
+		width: 165px;
+		margin-top: 5px;
+	}
+	
+	.c-hamburger {
+		display: block;
+	}
+	
+	nav#menu {
+		display: none;
+	}
+			
+	#hero {
+		min-height: 0px;
+		height: 800px;
+		background-position:center top 100px;
+		background-size: auto 60%;
+	}
+	
+	#careers {
+		padding: 0 40px;
+	}
+	
+	#careers .content h3 {
+		font-size: 20px;
+		line-height: 25px;
+	}
+	
+	#careers .content p {
+		font-size: 16px;
+	}	
+	
+	#footer {
+		padding: 50px 0 20px 0;
+	}
+	
+	#footerLogo {
+		width: 165px;
+		margin-top: 10px;
+	}
+	
+	.legal {
+		padding: 10px 0;
+	}
+	
+	#intro {
+		padding: 60px 40px 40px 40px;
+	}
+	
+	#more {
+		bottom: 50px;
+	}
+			
+	#vision .copy {
+		max-width: 650px;
+		margin: 0 auto;
+		padding: 60px;
+		width: auto;
+		float: none;
+		z-index: 10;
+		position: static;
+	}
+	
+	#vision .content {
+		min-height: 800px;
+	}
+	
+	#building {
+		width: 886px;
+		height: 940px;
+		bottom: 0px;
+		left: 0px;
+	}
+	
+	#services{
+		padding-bottom: 90px;
+	}
+	
+	#services .top {
+		width: auto;
+		margin: 0 auto 90px auto;	
+		padding: 80px 0 0 50px;
+	}
+	
+	#services .top .three_fifth {
+		width: 100%;
+		clear: both;
+		margin: 0;
+		padding: 0 40px 0px 0;
+	}
+	
+	#services .top .two_fifth {
+		width: 100%;
+		height: 320px;
+		clear: both;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.globeWrap {
+		position: absolute;
+		top: 50px;
+	}
+	
+	.bar {
+		height: 450px;
+	}
+		
+	#value {
+		min-height: 0;
+	}
+	
+	#value .copy {
+		padding: 80px 0;
+		width: auto;
+		float: none;
+	}
+	
+	#monogram {
+		display: none;
+	}
+	
+	#grid {
+		width: 1100px;
+		height: 1100px;
+		top: inherit;
+		left: inherit;
+		bottom: -200px;
+		right: -100px;
+	}
+	
+	#clients {
+		padding: 80px 0;
+	}
+		
+}
