@@ -5,7 +5,6 @@ install: gem install ruby_dep -v 1.3.1 && gem install jekyll -v 2.4.0 && gem ins
   s3_website
 script: jekyll build
 after_success: s3_website push
-deploy:
   provider: s3
   access_key_id: AKIAID6VL325SNHJY6FQ
   secret_access_key:
