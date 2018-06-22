@@ -1,21 +1,8 @@
-install:
-  - yarn install
-
-env:
-  - CI="true"
-
-language: node_js
-
-node_js:
-  - "8"
-
-cache:
-  directories:
-    - "**/node_modules"
-
-#before_script:
-#  - scripts/installs.sh
-
-script:
-#  - scripts/run.sh
-  - scripts/installs.sh
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: "matador.network"
+  skip_cleanup: true
+  on:
+    branch: master
