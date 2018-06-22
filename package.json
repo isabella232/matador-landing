@@ -1,0 +1,19 @@
+{
+  "name": "matador-landing",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolymathNetwork/matador-landing.git"
+  },
+  "author": "thom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PolymathNetwork/matador-landing/issues"
+  },
+  "homepage": "https://github.com/PolymathNetwork/matador-landing#readme"
+}
