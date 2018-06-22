@@ -1,30 +1,56 @@
-Last login: Thu Jun 21 17:00:55 on ttys001
-Thoms-MacBook-Pro-2:~ thom$ ks
--bash: ks: command not found
-Thoms-MacBook-Pro-2:~ thom$ ls
-Applications		Dropbox (VR)		Sites
-Creative Cloud Files	Library			base-template-npm
-Desktop			Movies			mac64
-Documents		Music			monero-v0.12.0.0
-Downloads		Pictures		yarn.lock
-Dropbox (Personal)	Public
+Last login: Fri Jun 22 10:38:54 on ttys000
 Thoms-MacBook-Pro-2:~ thom$ cd Documents/
 Thoms-MacBook-Pro-2:Documents thom$ cd matador-landing/
+Thoms-MacBook-Pro-2:matador-landing thom$ ls
+matador-ticker	matador-wizard
+Thoms-MacBook-Pro-2:matador-landing thom$ git status
+On branch thom
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.travis.yml.swp
+	matador-wizard/landing_page/.travis.yml
+
+nothing added to commit but untracked files present (use "git add" to track)
+Thoms-MacBook-Pro-2:matador-landing thom$ git add .
+Thoms-MacBook-Pro-2:matador-landing thom$ git commit -m "added Travis stuff"
+[thom 27196ce] added Travis stuff
+ 2 files changed, 47 insertions(+)
+ create mode 100644 .travis.yml.swp
+ create mode 100644 matador-wizard/landing_page/.travis.yml
+Thoms-MacBook-Pro-2:matador-landing thom$ git push
+fatal: The current branch thom has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin thom
+
+Thoms-MacBook-Pro-2:matador-landing thom$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Thoms-MacBook-Pro-2:matador-landing thom$ git push
+Everything up-to-date
 Thoms-MacBook-Pro-2:matador-landing thom$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-Thoms-MacBook-Pro-2:matador-landing thom$ git checkout -b thom
-Switched to a new branch 'thom'
+Thoms-MacBook-Pro-2:matador-landing thom$ git checkout thom
+Switched to branch 'thom'
+Thoms-MacBook-Pro-2:matador-landing thom$ git push origin travis
+error: src refspec travis does not match any.
+error: failed to push some refs to 'https://github.com/PolymathNetwork/matador-landing.git'
+Thoms-MacBook-Pro-2:matador-landing thom$ git status
+On branch thom
+nothing to commit, working tree clean
 Thoms-MacBook-Pro-2:matador-landing thom$ git branch
   master
 * thom
 Thoms-MacBook-Pro-2:matador-landing thom$ vim .travis.yml
+Thoms-MacBook-Pro-2:matador-landing thom$ vim .travis.yml
 
 language: ruby
-rvm::
-  - "stable"
+rvm:
+  - 2.2
 install: gem install ruby_dep -v 1.3.1 && gem install jekyll -v 2.4.0 && gem install s3_website
 script: jekyll build
 after_success: s3_website push
@@ -44,4 +70,4 @@ deploy:
     branch: master
 ~                                                                               
 ~                                                                               
--- INSERT --
+
