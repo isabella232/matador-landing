@@ -1022,7 +1022,8 @@ input {
 }
 
 .one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth{ 
-	margin-right:4%; 
+	margin-right:4%;
+	margin-left:4% 
 	float:left; 
 	position:relative;
 }
