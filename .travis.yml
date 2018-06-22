@@ -1,12 +1,10 @@
+lanuage: node_js
+node_js:
+  - node
 deploy:
   provider: s3
   access_key_id: AKIAID6VL325SNHJY6FQ
   secret_access_key:
     secure: MCqqAwGMdxUkwc6UTMFInEyIIkTlbxSYxiUB2YFk49EtT8Z9OiGrml9bmEVzHBGhC1rHmJeZUcvOzzAY40RC9s3n9hqR0ncpgUoY864odgetzvy6/ZKC97ljSm53cr9aIqQt0EhiUVS/l6iymBGU8VL0c8lZN1JUJNibBSgklr/ODt0nX1kt4QWkLHG7M9/Tbt6N7rF3ceGUCAk9QyZ6QRV2VNQ1/JIE/RNczobd+HcHX/5v7H+4h4opb4nFF1WNajpFrp33lBAQJ3Mx6mJ4b6b7CRrsx8Z6TjW5fohwsr3Lzw0Hpy7/M0Vkw57E2V73mwAiz0Kes8Z3o53iyutRYzFMEzYotI7DiBz4YyoOpI1r/hc6bqGIXFDikWeZr7Vco6Guc6giAYCsK4TRWSssPw24OPxsxV+DqK4qm/ik/xyZK2X2s4qlC3oNJuEW3oXr5EZmOEOBE9kNf5E6M+oHeqzx3T35OBFrK5BN8Pln8u959Hzi+I7GmfIqPBOmrlH8yPSDnJnGEodqFlfsP8Z1gCAdTKOmWv5TfqMH9Wn0GWzDL6eZDYcuP3MzQ9/VKexG9nYZ95LcOabcZzUGOqPr8iGlbKQR/jCtVL+/UTwRJNrZFxcYckM8cZ9jTuQKzs5wv78M07DwV6YaGUnVCpkqa/6beeWHcmye0ia/yhWcsN4=
   bucket: matador.network
-
-lanuage: node_js
-node_js:
-  - node
-
-test: exit 0
+  acl: public_read
