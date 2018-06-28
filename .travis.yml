@@ -1,17 +1,20 @@
 language: ruby
 rvm:
-- 2.2
-install: gem install ruby_dep -v 1.3.1 && gem install jekyll -v 2.4.0 && gem install
-  s3_website
+  - 2.2
+install: gem install ruby_dep -v 1.3.1 && gem install jekyll -v 2.4.0 && gem install s3_website
 script: jekyll build
 after_success: s3_website push
-"-deploy":
+branches:
+  only:
+  - master
+deploy:
   provider: s3
-  access_key_id: AKIAID6VL325SNHJY6FQ
-  secret_access_key:
-    secure: ZYyoYqL4JGCqoc3hT4eLvqaUi0409phO9rmsdFkIvpjgzWF59T6AzCYmpc9p4JMc6+FDG/2tvY1MiKd+QHWvAnw0TBG9QPM9Ps+V/zzl9t31Yee+P/HbwQ1qTyC8dhMkkrmTF6Meneqxx8xN7R26Ci1t6KN6jujIk+lbxas3DjEybAniGi4QN0yTE3EEjK6lI3ECANN7zbaotDv+hoxGWkVLFfXSjNWGalnOC8ZVMH1ZhG/XYSZFlZPcv+EGNb+TRcIu2/RnSIMpk6TzHZ7QZofGfQ5BdtrXwkN9yUFs4S3ws+9j75+A8d2L6vnVtVPNSYQaf0qoQkgkevMlQ+8auOS43oLeTWWTi7++edtfWnhgeeQs40hV/kRwum5MsCCsK/Bz75xZIBpuQWu8ha9WOejT1v4q0jij70Zn5KHOZpqlhEG6HfzN0ts9kVb3Dex1LHi3WKhgoJJmRfTExBbzlPGSd/z6vEDOb25nqS9JV1gVfJIpJtx+hk3ET5Tlu2ecEnKwWPWFfClptzJLmzsZIClbXiHsdmFpc8pHJEAPMsZCiljfXke266Pw/wUyFYqj2UEw8OinZoNnH8p4DWnC9IIkxeIdMwnu+oDXwzCq9mG8AF64DRSXatOgtNgUouXC4ZdZH5FkysMMTqWBu2xudcWho5hmDnyZIFdeQ+l6ia0=
-  bucket: matador.network
-  upload-dir: matador.network
-  acl: public_read
+  # You can refer to environment variables from Travis repo settings!
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  # Name of the S3 bucket to which your site should be uploaded.
+  bucket: polymath.network
+  # Prevent Travis from deleting your built site so it can be uploaded.
+  skip_cleanup: true
   on:
-    repo: PolymathNetwork/matador-landing
+    branch: master
